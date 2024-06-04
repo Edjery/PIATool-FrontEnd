@@ -1,35 +1,10 @@
-import { Box, Button, Grid } from "@mui/material";
-import Header from "./assets/components/Header";
-import MainContent from "./assets/components/MainContent";
-import SideBarPopUp from "./assets/components/SideBarPopUp";
-import { useState } from "react";
+import { Box } from "@mui/material";
+import Home from "./assets/page/layout/Home";
 
 function App() {
-  const [expanded, setExpanded] = useState(false);
-
-  const toggleSideBar = () => {
-    setExpanded(!expanded);
-  };
-
   return (
     <Box>
-      <Box sx={{ display: "flex" }}>
-        <SideBarPopUp isExpanded={expanded} />
-        <Box
-          sx={{
-            width: "100%",
-          }}
-        >
-          <Grid container>
-            <Grid item xs={12}>
-              <Header toggleSideBar={toggleSideBar} />
-            </Grid>
-            <Grid item xs={12}>
-              <MainContent />
-            </Grid>
-          </Grid>
-        </Box>
-      </Box>
+      <Home />
     </Box>
   );
 }

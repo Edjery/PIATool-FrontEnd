@@ -11,7 +11,7 @@ const SideBarPopUp = ({ isExpanded }: Props) => {
         sx={{
           width: isExpanded ? "36vh" : "10vh",
           height: "100vh",
-          backgroundColor: "green",
+          backgroundColor: "orange",
           transition: "width 0.5s ease-out",
           overflow: "auto",
           "&::-webkit-scrollbar": {

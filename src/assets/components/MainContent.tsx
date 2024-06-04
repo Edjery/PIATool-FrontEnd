@@ -7,6 +7,7 @@ const MainContent = () => {
         display: "flex",
         background: "yellow",
         padding: "2vh",
+        height: "90vh",
       }}
     >
       <Typography>Main Content</Typography>
