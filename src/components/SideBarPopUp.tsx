@@ -28,7 +28,7 @@ const SideBarPopUp = ({ isExpanded }: Props) => {
           },
         }}
       >
-        <Header/>
+        <Header />
       </Box>
     </Box>
   );
