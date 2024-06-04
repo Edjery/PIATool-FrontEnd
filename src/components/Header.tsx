@@ -1,5 +1,5 @@
 import { Box, Button } from "@mui/material";
-import { IconMenu } from "../assets/values/icons";
+import { IconMenu } from "../values/icons";
 
 interface Props {
   toggleSideBar: () => void;

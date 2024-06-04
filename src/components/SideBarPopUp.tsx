@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
-import { sideBarPrimaryColor } from "../assets/values/colors";
+import { sideBarPrimaryColor } from "../values/colors";
+import Header from "./sidebar/Header";
 
 interface Props {
   isExpanded: boolean;
@@ -26,7 +27,9 @@ const SideBarPopUp = ({ isExpanded }: Props) => {
             backgroundColor: "#C0C0C0",
           },
         }}
-      ></Box>
+      >
+        <Header/>
+      </Box>
     </Box>
   );
 };

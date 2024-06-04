@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Home from "./assets/page/layout/Home";
+import Home from "./layout/Home";
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { mainContentPrimaryColor } from "../assets/values/colors";
+import { mainContentPrimaryColor } from "../values/colors";
 
 const MainContent = () => {
   return (

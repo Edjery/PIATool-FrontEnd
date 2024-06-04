@@ -1,8 +1,8 @@
 import { Box, Grid } from "@mui/material";
 import { useState } from "react";
-import Header from "../../../components/Header";
-import MainContent from "../../../components/MainContent";
-import SideBarPopUp from "../../../components/SideBarPopUp";
+import Header from "../components/Header";
+import MainContent from "../components/MainContent";
+import SideBarPopUp from "../components/SideBarPopUp";
 
 const Home = () => {
   const [expanded, setExpanded] = useState(false);
