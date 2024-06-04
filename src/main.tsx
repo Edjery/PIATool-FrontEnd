@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 
 import { ThemeProvider } from "@mui/material/styles";
-import theme from "./assets/theme/theme.ts";
+import theme from "./theme/theme.ts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
