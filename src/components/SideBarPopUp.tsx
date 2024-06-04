@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { sideBarPrimaryColor } from "../values/colors";
+import { sideBarPrimaryColor } from "../assets/values/colors";
 
 interface Props {
   isExpanded: boolean;
