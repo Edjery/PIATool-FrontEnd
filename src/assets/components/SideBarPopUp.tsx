@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import { sideBarPrimaryColor } from "../values/colors";
 
 interface Props {
   isExpanded: boolean;
@@ -11,7 +12,7 @@ const SideBarPopUp = ({ isExpanded }: Props) => {
         sx={{
           width: isExpanded ? "36vh" : "10vh",
           height: "100vh",
-          backgroundColor: "orange",
+          backgroundColor: sideBarPrimaryColor,
           transition: "width 0.5s ease-out",
           overflow: "auto",
           "&::-webkit-scrollbar": {

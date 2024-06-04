@@ -1,16 +1,16 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import { mainContentPrimaryColor } from "../values/colors";
 
 const MainContent = () => {
   return (
     <Box
       sx={{
         display: "flex",
-        background: "yellow",
+        background: mainContentPrimaryColor,
         padding: "2vh",
         height: "90vh",
       }}
     >
-      <Typography>Main Content</Typography>
     </Box>
   );
 };
