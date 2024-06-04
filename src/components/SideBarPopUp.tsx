@@ -1,6 +1,8 @@
 import { Box } from "@mui/material";
 import { sideBarPrimaryColor, sideBarPrimaryTextColor } from "../values/colors";
+import { IconMenu, UsepLogo } from "../values/icons";
 import Header from "./sidebar/Header";
+import Item from "./sidebar/Item";
 import SubHeader from "./sidebar/SubHeader";
 
 interface Props {
@@ -8,6 +10,11 @@ interface Props {
 }
 
 const SideBarPopUp = ({ isExpanded }: Props) => {
+  const items = [
+    { icon: IconMenu, name: "Menu" },
+    { icon: IconMenu, name: "Usep" },
+  ];
+
   return (
     <Box>
       <Box
@@ -30,8 +37,25 @@ const SideBarPopUp = ({ isExpanded }: Props) => {
           },
         }}
       >
-        <Header />
-        <SubHeader />
+        {isExpanded ? (
+          <Box>
+            <Header />
+            <SubHeader />
+            <Box sx={{ marginTop: "2vh" }}>
+              {items.map((item, index) => (
+                <Box key={index}>
+                  <Item icon={item.icon} name={item.name} />
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        ) : (
+          <Box sx={{ display: "flex", padding: "2.5vh" }}>
+            <Box sx={{ marginTop: "0.5vh", marginRight: "2vh" }}>
+              <UsepLogo />
+            </Box>
+          </Box>
+        )}
       </Box>
     </Box>
   );
