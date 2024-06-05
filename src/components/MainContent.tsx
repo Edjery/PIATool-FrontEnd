@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { mainContentPrimaryColor } from "../values/colors";
+import UserHomePage from "./UserHomePage";
 
 const MainContent = () => {
   return (
@@ -11,6 +12,7 @@ const MainContent = () => {
         height: "90vh",
       }}
     >
+      <UserHomePage />
     </Box>
   );
 };
