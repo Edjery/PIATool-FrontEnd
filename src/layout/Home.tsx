@@ -5,7 +5,7 @@ import MainContent from "../components/MainContent";
 import SideBarPopUp from "../components/SideBarPopUp";
 
 const Home = () => {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
 
   const toggleSideBar = () => {
     setExpanded(!expanded);

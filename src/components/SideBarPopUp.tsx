@@ -1,6 +1,8 @@
 import { Box } from "@mui/material";
+import SetNavigationListByRoleId from "../helper/SetNavigationListByRoleId";
 import { sideBarPrimaryColor, sideBarPrimaryTextColor } from "../values/colors";
-import { IconMenu, UsepLogo } from "../values/icons";
+import { UsepLogo } from "../values/icons";
+import NavigationList from "../values/interface/NavigationList";
 import Header from "./sidebar/Header";
 import Item from "./sidebar/Item";
 import SubHeader from "./sidebar/SubHeader";
@@ -10,10 +12,9 @@ interface Props {
 }
 
 const SideBarPopUp = ({ isExpanded }: Props) => {
-  const items = [
-    { icon: IconMenu, name: "Menu" },
-    { icon: IconMenu, name: "Usep" },
-  ];
+  const currentRoleId: number = 2;
+  const currentList: NavigationList[] =
+    SetNavigationListByRoleId(currentRoleId);
 
   return (
     <Box>
@@ -42,9 +43,9 @@ const SideBarPopUp = ({ isExpanded }: Props) => {
             <Header />
             <SubHeader />
             <Box sx={{ marginTop: "2vh" }}>
-              {items.map((item, index) => (
+              {currentList.map((item, index) => (
                 <Box key={index}>
-                  <Item icon={item.icon} name={item.name} />
+                  <Item icon={item.icon} name={item.name} url={item.url} />
                 </Box>
               ))}
             </Box>
