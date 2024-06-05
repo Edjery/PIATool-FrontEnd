@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import { mainContentPrimaryColor } from "../values/colors";
 import UserHomePage from "./mainContent/UserHomePage";
+import Disclaimer from "./assessmentProcess/Disclaimer";
 
 const MainContent = () => {
   return (
@@ -10,10 +11,12 @@ const MainContent = () => {
         flexDirection: "column",
         background: mainContentPrimaryColor,
         padding: "2vh",
-        height: "85vh",
+        height: "auto",
+        minHeight: "85vh",
       }}
     >
-      <UserHomePage />
+      {/* <UserHomePage /> */}
+      <Disclaimer />
     </Box>
   );
 };
