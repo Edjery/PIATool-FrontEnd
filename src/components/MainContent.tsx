@@ -9,7 +9,7 @@ const MainContent = () => {
         display: "flex",
         background: mainContentPrimaryColor,
         padding: "2vh",
-        height: "90vh",
+        height: "85vh",
       }}
     >
       <UserHomePage />

@@ -17,47 +17,48 @@ const SideBarPopUp = ({ isExpanded }: Props) => {
     SetNavigationListByRoleId(currentRoleId);
 
   return (
-    <Box>
-      <Box
-        sx={{
-          width: isExpanded ? "36vh" : "10vh",
-          height: "100vh",
-          backgroundColor: sideBarPrimaryColor,
-          color: sideBarPrimaryTextColor,
-          transition: "width 0.5s ease-out",
-          overflow: "auto",
-          "&::-webkit-scrollbar": {
-            width: "1vh",
-          },
-          "&::-webkit-scrollbar-thumb": {
-            backgroundColor: "transparent",
-            borderRadius: "6px",
-          },
-          "&:hover::-webkit-scrollbar-thumb": {
-            backgroundColor: "#C0C0C0",
-          },
-        }}
-      >
-        {isExpanded ? (
-          <Box>
-            <Header />
-            <SubHeader />
-            <Box sx={{ marginTop: "2vh" }}>
-              {currentList.map((item, index) => (
-                <Box key={index}>
-                  <Item icon={item.icon} name={item.name} url={item.url} />
-                </Box>
-              ))}
-            </Box>
+    <Box
+      sx={{
+        width: isExpanded ? "42vh" : "10vh",
+        height: "auto",
+        minHeight: "100vh",
+        backgroundColor: sideBarPrimaryColor,
+        color: sideBarPrimaryTextColor,
+        transition: "width 0.5s ease-out",
+        overflow: "auto",
+        zIndex: 1,
+        "&::-webkit-scrollbar": {
+          width: "1vh",
+        },
+        "&::-webkit-scrollbar-thumb": {
+          backgroundColor: "transparent",
+          borderRadius: "6px",
+        },
+        "&:hover::-webkit-scrollbar-thumb": {
+          backgroundColor: "#C0C0C0",
+        },
+      }}
+    >
+      {isExpanded ? (
+        // <Box sx={{ position: "fixed", width: "42vh", zIndex: 2 }}>
+        <Box>
+          <Header />
+          <SubHeader />
+          <Box sx={{ marginTop: "2vh" }}>
+            {currentList.map((item, index) => (
+              <Box key={index}>
+                <Item icon={item.icon} name={item.name} url={item.url} />
+              </Box>
+            ))}
           </Box>
-        ) : (
-          <Box sx={{ display: "flex", padding: "2.5vh" }}>
-            <Box sx={{ marginTop: "0.5vh", marginRight: "2vh" }}>
-              <UsepLogo />
-            </Box>
+        </Box>
+      ) : (
+        <Box sx={{ display: "flex", padding: "2.5vh" }}>
+          <Box sx={{ marginTop: "0.5vh", marginRight: "2vh" }}>
+            <UsepLogo />
           </Box>
-        )}
-      </Box>
+        </Box>
+      )}
     </Box>
   );
 };

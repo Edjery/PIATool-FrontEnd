@@ -1,5 +1,6 @@
 import { Box, Button } from "@mui/material";
-import { IconMenu, UsepLogo } from "../values/icons";
+import { mainHeaderPrimaryColor } from "../values/colors";
+import { IconMenu } from "../values/icons";
 
 interface Props {
   toggleSideBar: () => void;
@@ -13,7 +14,7 @@ const Header = ({ toggleSideBar, expanded }: Props) => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        background: "white",
+        background: mainHeaderPrimaryColor,
         padding: "2vh",
       }}
     >

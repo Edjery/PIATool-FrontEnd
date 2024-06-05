@@ -1,5 +1,6 @@
 import { Box, Grid } from "@mui/material";
 import { useState } from "react";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MainContent from "../components/MainContent";
 import SideBarPopUp from "../components/SideBarPopUp";
@@ -25,6 +26,9 @@ const Home = () => {
           </Grid>
           <Grid item xs={12}>
             <MainContent />
+          </Grid>
+          <Grid item xs={12}>
+            <Footer />
           </Grid>
         </Grid>
       </Box>
