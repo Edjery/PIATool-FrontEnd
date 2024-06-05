@@ -40,7 +40,6 @@ const SideBarPopUp = ({ isExpanded }: Props) => {
       }}
     >
       {isExpanded ? (
-        // <Box sx={{ position: "fixed", width: "42vh", zIndex: 2 }}>
         <Box>
           <Header />
           <SubHeader />
