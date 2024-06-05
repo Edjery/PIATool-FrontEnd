@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import { btnStart, schoolName, websiteHeader } from "../../values/string";
-import UsepLogo from "./UsepLogo";
+import HeaderUsepLogo from "./HeaderUsepLogo";
 
 const UserHomePage = () => {
   return (
@@ -14,7 +14,7 @@ const UserHomePage = () => {
       }}
     >
       <Box sx={{ marginTop: "3vh" }}>
-        <UsepLogo />
+        <HeaderUsepLogo />
       </Box>
       <Box sx={{ marginTop: "3vh" }}>
         <Typography variant="h4">{schoolName}</Typography>

@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import usepLogo from "../../assets/logo/usep_logo.png";
 
-const UsepLogo = () => {
+const HeaderUsepLogo = () => {
   return (
     <Box
       component="img"
@@ -17,4 +17,4 @@ const UsepLogo = () => {
   );
 };
 
-export default UsepLogo;
+export default HeaderUsepLogo;
