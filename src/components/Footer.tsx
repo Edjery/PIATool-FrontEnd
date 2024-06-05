@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { mainHeaderPrimaryColor } from "../values/colors";
 
 const Footer = () => {
@@ -10,7 +10,9 @@ const Footer = () => {
         padding: "2vh",
       }}
     >
-      Footer
+      <Typography variant="body1" align="center">
+        <strong>Copyright &copy; 2023 USeP PIA.</strong> All rights reserved.
+      </Typography>
     </Box>
   );
 };
