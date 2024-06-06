@@ -3,6 +3,7 @@ import { mainContentPrimaryColor } from "../values/colors";
 import UserHomePage from "./mainContent/UserHomePage";
 import Disclaimer from "./assessmentProcess/Disclaimer";
 import ProcessName from "./assessmentProcess/ProcessName";
+import DataProcess from "./assessmentProcess/DataProcess";
 
 const MainContent = () => {
   return (
@@ -21,7 +22,8 @@ const MainContent = () => {
     >
       {/* <UserHomePage /> */}
       {/* <Disclaimer /> */}
-      <ProcessName />
+      {/* <ProcessName /> */}
+      <DataProcess />
     </Box>
   );
 };
