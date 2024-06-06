@@ -1,19 +1,11 @@
 import { Box, Button, Link, Typography } from "@mui/material";
 import { mainHeaderPrimaryColor } from "../../values/colors";
 import { btnStart, disclaimerTitle } from "../../values/string";
+import CardContainer from "../common/CardContainer";
 
 const Disclaimer = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-      }}
-    >
-      {/* Refactor to a card */}
+    <CardContainer>
       <Box
         sx={{
           display: "flex",
@@ -64,7 +56,7 @@ const Disclaimer = () => {
           <Button variant="contained">{btnStart}</Button>;
         </Box>
       </Box>
-    </Box>
+    </CardContainer>
   );
 };
 
