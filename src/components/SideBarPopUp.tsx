@@ -19,7 +19,7 @@ const SideBarPopUp = ({ isExpanded }: Props) => {
   return (
     <Box
       sx={{
-        width: isExpanded ? "42vh" : "10vh",
+        width: isExpanded ? "42vh" : "10.5vh",
         height: "auto",
         minHeight: "100vh",
         backgroundColor: sideBarPrimaryColor,
