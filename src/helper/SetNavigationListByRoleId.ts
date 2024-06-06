@@ -1,7 +1,7 @@
-import NavigationList from "../values/interface/NavigationList";
+import INavigationList from "../values/interface/INavigationList";
 import { adminNavigationList, userNavigationList } from "../values/list";
 
-const SetNavigationListByRoleId = (roleId: number): NavigationList[] => {
+const SetNavigationListByRoleId = (roleId: number): INavigationList[] => {
   switch (roleId) {
     case 1:
       return adminNavigationList;

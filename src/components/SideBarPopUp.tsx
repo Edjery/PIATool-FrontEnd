@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import SetNavigationListByRoleId from "../helper/SetNavigationListByRoleId";
 import { sideBarPrimaryColor, sideBarPrimaryTextColor } from "../values/colors";
 import { UsepLogo } from "../values/icons";
-import NavigationList from "../values/interface/NavigationList";
+import INavigationList from "../values/interface/INavigationList";
 import Header from "./sidebar/Header";
 import Item from "./sidebar/Item";
 import SubHeader from "./sidebar/SubHeader";
@@ -13,7 +13,7 @@ interface Props {
 
 const SideBarPopUp = ({ isExpanded }: Props) => {
   const currentRoleId: number = 2;
-  const currentList: NavigationList[] =
+  const currentList: INavigationList[] =
     SetNavigationListByRoleId(currentRoleId);
 
   return (

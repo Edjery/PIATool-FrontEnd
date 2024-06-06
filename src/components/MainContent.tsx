@@ -20,8 +20,8 @@ const MainContent = () => {
       }}
     >
       {/* <UserHomePage /> */}
-      <Disclaimer />
-      {/* <ProcessName /> */}
+      {/* <Disclaimer /> */}
+      <ProcessName />
     </Box>
   );
 };

@@ -1,5 +1,4 @@
 import { Box, Button, Link, Typography } from "@mui/material";
-import { mainHeaderPrimaryColor } from "../../values/colors";
 import { btnStart, disclaimerTitle } from "../../values/string";
 import CardContainer from "../common/CardContainer";
 

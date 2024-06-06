@@ -7,15 +7,16 @@ import {
   IconSettings,
   IconWarning,
 } from "./icons";
-import NavigationList from "./interface/NavigationList";
+import INavigationList from "./interface/INavigationList";
+import IProcessName from "./interface/IProcessName";
 
-export const userNavigationList: NavigationList[] = [
+export const userNavigationList: INavigationList[] = [
   { name: "Home", icon: IconHome, url: "/home" },
   { name: "Reports", icon: IconReport, url: "/reports" },
   { name: "Logout", icon: IconLogout, url: "/logout" },
 ];
 
-export const adminNavigationList: NavigationList[] = [
+export const adminNavigationList: INavigationList[] = [
   { name: "Home", icon: IconHome, url: "/home" },
   { name: "Reports", icon: IconReport, url: "/reports" },
   { name: "Threats", icon: IconWarning, url: "/threats" },
@@ -27,4 +28,31 @@ export const adminNavigationList: NavigationList[] = [
   },
   { name: "Maintenance", icon: IconSettings, url: "/maintenance" },
   { name: "Logout", icon: IconLogout, url: "/logout" },
+];
+
+export const processNameList: IProcessName[] = [
+  {
+    id: 1,
+    name: "Guidance and Counseling Service",
+  },
+  {
+    id: 2,
+    name: "Group Guidance Sessions",
+  },
+  {
+    id: 3,
+    name: "Seminars/Workshops/Symposia",
+  },
+  {
+    id: 4,
+    name: "Telecounseling Services",
+  },
+  {
+    id: 5,
+    name: "Testing Services",
+  },
+  {
+    id: 6,
+    name: "Student Peer Facilitator (SPF) Membership",
+  },
 ];
