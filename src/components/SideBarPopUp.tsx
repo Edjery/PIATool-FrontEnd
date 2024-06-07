@@ -26,7 +26,6 @@ const SideBarPopUp = ({ isExpanded }: Props) => {
         color: sideBarPrimaryTextColor,
         transition: "width 0.5s ease-out",
         overflow: "auto",
-        zIndex: 1,
         "&::-webkit-scrollbar": {
           width: "1vh",
         },

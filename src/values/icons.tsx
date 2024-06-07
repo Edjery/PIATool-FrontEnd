@@ -8,6 +8,7 @@ import WarningAmberOutlinedIcon from "@mui/icons-material/WarningAmberOutlined";
 import SchemaOutlinedIcon from "@mui/icons-material/SchemaOutlined";
 import RecommendOutlinedIcon from "@mui/icons-material/RecommendOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export const IconHome = () => <HomeOutlinedIcon />;
 export const IconReport = () => <StickyNote2OutlinedIcon />;
@@ -16,6 +17,7 @@ export const IconWarning = () => <WarningAmberOutlinedIcon />;
 export const IconDataScheme = () => <SchemaOutlinedIcon />;
 export const IconRecommendation = () => <RecommendOutlinedIcon />;
 export const IconSettings = () => <SettingsOutlinedIcon />;
+export const IconDelete = () => <DeleteIcon />;
 
 export const IconMenu = () => <MenuIcon />;
 export const UsepLogo = () => <CustomIcon img={usepLogo} />;

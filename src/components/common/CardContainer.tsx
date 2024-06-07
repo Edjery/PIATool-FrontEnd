@@ -4,16 +4,26 @@ import { mainHeaderPrimaryColor } from "../../values/colors";
 
 interface Props {
   children: ReactNode;
+  variant: "lg" | "md";
 }
 
-const CardContainer = ({ children }: Props) => {
+const CardContainer = ({ children, variant }: Props) => {
+  let cardWidth = "60vh";
+
+  switch (variant) {
+    case "lg":
+      cardWidth = "150vh";
+      break;
+    case "md":
+      cardWidth = "60vh";
+      break;
+  }
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
-        width: "auto",
-        maxWidth: "60vh",
+        maxWidth: cardWidth,
         padding: "2vh",
         background: mainHeaderPrimaryColor,
         borderRadius: "2vh",

@@ -9,6 +9,7 @@ import {
 } from "./icons";
 import INavigationList from "./interface/INavigationList";
 import IProcessName from "./interface/IProcessName";
+import { collectionMethodLabel, dataCollectionTitle, dataDisclosureQuestion1, dataDisclosureQuestion2, dataDisclosureQuestion3, dataDisclosureQuestion4, dataDisclosureQuestion5, dataDisclosureTitle, dataSourceLabel, dataStorageDisposalQuestion1, dataStorageDisposalQuestion2, dataStorageDisposalQuestion3, dataStorageDisposalTitle, timingOfCollectionLabel } from "./string";
 
 export const userNavigationList: INavigationList[] = [
   { name: "Home", icon: IconHome, url: "/home" },
@@ -54,5 +55,34 @@ export const processNameList: IProcessName[] = [
   {
     id: 6,
     name: "Student Peer Facilitator (SPF) Membership",
+  },
+];
+
+export const dataProcessQuestions: IDataProcessQuestions[] = [
+  {
+    title: dataCollectionTitle,
+    questions: [
+      dataSourceLabel,
+      collectionMethodLabel,
+      timingOfCollectionLabel,
+    ],
+  },
+  {
+    title: dataDisclosureTitle,
+    questions: [
+      dataDisclosureQuestion1,
+      dataDisclosureQuestion2,
+      dataDisclosureQuestion3,
+      dataDisclosureQuestion4,
+      dataDisclosureQuestion5,
+    ],
+  },
+  {
+    title: dataStorageDisposalTitle,
+    questions: [
+      dataStorageDisposalQuestion1,
+      dataStorageDisposalQuestion2,
+      dataStorageDisposalQuestion3,
+    ],
   },
 ];

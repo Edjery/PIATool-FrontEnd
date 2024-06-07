@@ -4,7 +4,7 @@ import CardContainer from "../common/CardContainer";
 
 const Disclaimer = () => {
   return (
-    <CardContainer>
+    <CardContainer variant="md">
       <Typography variant="h4" sx={{ fontWeight: "bold" }}>
         {disclaimerTitle}
       </Typography>

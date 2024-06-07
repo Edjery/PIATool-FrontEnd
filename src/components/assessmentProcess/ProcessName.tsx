@@ -28,7 +28,7 @@ const ProcessName = () => {
     setProcessName(event.target.value);
   };
   return (
-    <CardContainer>
+    <CardContainer variant="md">
       <Typography variant="h6" sx={{ fontWeight: "bold", padding: "3vh" }}>
         {processNameDescription}
       </Typography>
