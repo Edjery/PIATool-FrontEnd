@@ -4,6 +4,7 @@ import UserHomePage from "./mainContent/UserHomePage";
 import Disclaimer from "./assessmentProcess/Disclaimer";
 import ProcessName from "./assessmentProcess/ProcessName";
 import DataProcess from "./assessmentProcess/DataProcess";
+import RiskAssessment from "./assessmentProcess/RiskAssessment";
 
 const MainContent = () => {
   return (
@@ -23,7 +24,8 @@ const MainContent = () => {
       {/* <UserHomePage /> */}
       {/* <Disclaimer /> */}
       {/* <ProcessName /> */}
-      <DataProcess />
+      {/* <DataProcess /> */}
+      <RiskAssessment />
     </Box>
   );
 };

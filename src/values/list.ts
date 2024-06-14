@@ -9,6 +9,9 @@ import {
 } from "./icons";
 import INavigationList from "./interface/INavigationList";
 import IProcessName from "./interface/IProcessName";
+import IRiskRatingMap from "./interface/IRiskRatingMap";
+import ISelectOption from "./interface/ISelectOption";
+import ITable from "./interface/ITable";
 import { collectionMethodLabel, dataCollectionTitle, dataDisclosureQuestion1, dataDisclosureQuestion2, dataDisclosureQuestion3, dataDisclosureQuestion4, dataDisclosureQuestion5, dataDisclosureTitle, dataSourceLabel, dataStorageDisposalQuestion1, dataStorageDisposalQuestion2, dataStorageDisposalQuestion3, dataStorageDisposalTitle, timingOfCollectionLabel } from "./string";
 
 export const userNavigationList: INavigationList[] = [
@@ -86,3 +89,52 @@ export const dataProcessQuestions: IDataProcessQuestions[] = [
     ],
   },
 ];
+
+export const riskRatingMapList: IRiskRatingMap[] = [
+  { rating: "1", description: "Negligible" },
+  { rating: "2 - 4", description: "Low Risk" },
+  { rating: "6 - 9", description: "Medium Risk" },
+  { rating: "10 - 16", description: "High Risk" },
+]
+
+export const riskAssessmentOptions: ISelectOption[] = [
+  { text: "1", value: "1" },
+  { text: "2", value: "2" },
+  { text: "3", value: "3" },
+  { text: "4", value: "4" },
+]
+
+export const riskAssessmentTerms: ITable = {
+  title: "The following definitions are used in this section.",
+  columnHeaders: ["Term", "Definition"],
+  rows: [
+    ["Risk", "The potential for loss, damage or destruction as a result of a threat exploiting a vulnerability."],
+    ["Threat", "A potential cause of an unwanted incident, which may result in harm to a system or organization."],
+    ["Vulnerability", "A weakness of an asset or group of assets that can be exploited by one or more threats."],
+    ["Impact", "Everity of the injuries that might arise if the event does occur (can be ranked from trivial injuries to major injuries)."],
+    ["Probability", "Chance or probability of something happening;"],
+  ]
+
+}
+
+export const impactGuideTable: ITable = {
+  title: "Impact",
+  columnHeaders: ["Rating", "Types", "Description"],
+  rows: [
+    ["1", "Negligible", "The data subjects will either not be affected or may encounter a few inconveniences, which they will overcome without any problem."],
+    ["2", "Limited", "The data subject may encounter significant inconveniences, which they will be able to overcome despite a few difficulties."],
+    ["3", "Significant", "The data subjects may encounter significant inconveniences, which they should be able to overcome but with serious difficulties."],
+    ["4", "Maximum", "The data subjects may encounter significant inconveniences, or even irreversible, consequences, which they may not overcome."],
+  ]
+}
+
+export const probabilityGuideTable: ITable = {
+  title: "Probability",
+  columnHeaders: ["Rating", "Types", "Description"],
+  rows: [
+    ["1", "Unlikely", "Not expected, but there is a slight possibility it may occur at some time."],
+    ["2", "Possible", "Casual occurrence. It might happen at some time."],
+    ["3", "Likely", "Frequent occurrence. There is a strong possibility that it might occur."],
+    ["4", "Almost", "Very likely. It is expected to occur in most circumstances."],
+  ]
+}

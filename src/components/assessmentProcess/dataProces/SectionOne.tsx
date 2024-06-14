@@ -36,7 +36,7 @@ interface IDataField {
   value: string;
 }
 
-const DataProcessSectionOne: React.FC = () => {
+const SectionOne = () => {
   const [dataFieldList, setDataFieldList] = useState<IDataField[]>([]);
 
   const handleAddField = () => {
@@ -56,7 +56,6 @@ const DataProcessSectionOne: React.FC = () => {
         ? { ...dataField, value: event.target.value }
         : dataField
     );
-    console.log(updatedList);
     setDataFieldList(updatedList);
   };
 
@@ -123,4 +122,4 @@ const DataProcessSectionOne: React.FC = () => {
   );
 };
 
-export default DataProcessSectionOne;
+export default SectionOne;
