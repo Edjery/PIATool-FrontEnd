@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { ChangeEvent, useState } from "react";
 import { IconDelete } from "../../../values/icons";
-import { dataProcessQuestions } from "../../../values/list";
+import { dataProcessingQuestions } from "../../../values/list";
 import {
   btnAddField,
   dataPurposeHint,
@@ -36,7 +36,7 @@ interface IDataField {
   value: string;
 }
 
-const SectionOne = () => {
+const DataProcessSection = () => {
   const [dataFieldList, setDataFieldList] = useState<IDataField[]>([]);
 
   const handleAddField = () => {
@@ -111,7 +111,7 @@ const SectionOne = () => {
       <Typography variant="body1" sx={{ textAlign: "justify" }}>
         {processLevelAnalysisDescription}
       </Typography>
-      {dataProcessQuestions.map((section) => (
+      {dataProcessingQuestions.map((section) => (
         <FormContainer variant="lg" title={section.title} key={section.title}>
           {section.questions.map((question, index) => (
             <FormTextAreaField title={""} label={question} key={index} />
@@ -122,4 +122,4 @@ const SectionOne = () => {
   );
 };
 
-export default SectionOne;
+export default DataProcessSection;

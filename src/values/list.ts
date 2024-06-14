@@ -7,6 +7,7 @@ import {
   IconSettings,
   IconWarning,
 } from "./icons";
+import IDataProcessingQuestions from "./interface/IDataProcessingQuestions";
 import INavigationList from "./interface/INavigationList";
 import IProcessName from "./interface/IProcessName";
 import IRiskRatingMap from "./interface/IRiskRatingMap";
@@ -61,7 +62,7 @@ export const processNameList: IProcessName[] = [
   },
 ];
 
-export const dataProcessQuestions: IDataProcessQuestions[] = [
+export const dataProcessingQuestions: IDataProcessingQuestions[] = [
   {
     title: dataCollectionTitle,
     questions: [

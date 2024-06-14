@@ -1,10 +1,10 @@
 import BottomButtonNavigators from "../common/BottomButtonNavigators";
 import CardContainer from "../common/CardContainer";
-import SectionOne from "./dataProcess/SectionOne";
+import DataProcessSection from "./dataProcess/DataProcessSection";
 
 const DataProcess = () => (
   <CardContainer variant="lg">
-    <SectionOne />
+    <DataProcessSection />
     <BottomButtonNavigators />
   </CardContainer>
 );
