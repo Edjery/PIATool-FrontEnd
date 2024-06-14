@@ -1,8 +1,6 @@
-import { Box, Button } from "@mui/material";
-import { btnBack, btnNext } from "../../values/string";
-import CardContainer from "../common/CardContainer";
-import SectionOne from "./dataProces/SectionOne";
 import BottomButtonNavigators from "../common/BottomButtonNavigators";
+import CardContainer from "../common/CardContainer";
+import SectionOne from "./dataProcess/SectionOne";
 
 const DataProcess = () => (
   <CardContainer variant="lg">
