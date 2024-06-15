@@ -1,19 +1,11 @@
 import { useEffect, useState } from "react";
+import BottomButtonNavigators from "../common/BottomButtonNavigators";
 import CardContainer from "../common/CardContainer";
+import formInitialValues from "./initialValues/riskAssessmentInitialValues";
 import IRiskAssessment from "./interface/IRiskAssessment";
 import Description from "./riskAssessment/Description";
 import TableCalculations from "./riskAssessment/TableCalculations";
 import TableForm from "./riskAssessment/TableForm";
-import BottomButtonNavigators from "../common/BottomButtonNavigators";
-
-const formInitialValues: IRiskAssessment[] = [
-  {
-    id: Math.random(),
-    riskName: "",
-    impactRating: "",
-    probabilityRating: "",
-  },
-];
 
 const RiskAssessment = () => {
   const [riskAssessment, setRiskAssessment] = useState<IRiskAssessment[]>([]);

@@ -1,17 +1,38 @@
-import { Box, FormLabel, Input, Tooltip } from "@mui/material";
+import { Box, TextField, Tooltip } from "@mui/material";
+import { ChangeEvent } from "react";
 import { usepDarkPrimaryColor, usepPrimaryColor } from "../../values/colors";
 
 interface Props {
   title: string;
   label: string;
+  name: string;
+  values: string | undefined;
+  helperText: string | false | undefined;
+  error: boolean | undefined;
+  handleChange: {
+    (e: ChangeEvent<any>): void;
+    <T = string | ChangeEvent<any>>(field: T): T extends ChangeEvent<any>
+      ? void
+      : (e: string | ChangeEvent<any>) => void;
+  };
+  handleBlur: {
+    (e: React.FocusEvent<any>): void;
+    <T = any>(fieldOrEvent: T): T extends string ? (e: any) => void : void;
+  };
 }
 
-const FormTextAreaField = ({ title, label }: Props) => {
+const FormTextAreaField = ({
+  title,
+  label,
+  name,
+  values,
+  helperText,
+  error,
+  handleChange,
+  handleBlur,
+}: Props) => {
   return (
     <Box sx={{ my: "2vh" }}>
-      <Tooltip title={title}>
-        <FormLabel>{label}</FormLabel>
-      </Tooltip>
       <Box
         sx={{
           position: "relative",
@@ -19,8 +40,6 @@ const FormTextAreaField = ({ title, label }: Props) => {
             width: "100%",
             height: "100%",
             padding: "8px",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
             resize: "none",
             "&:hover": {
               borderColor: "#888",
@@ -42,7 +61,23 @@ const FormTextAreaField = ({ title, label }: Props) => {
           },
         }}
       >
-        <Input fullWidth multiline rows={3} disableUnderline />
+        <Tooltip title={title}>
+          <TextField
+            label={label}
+            margin="normal"
+            variant="outlined"
+            name={name}
+            multiline
+            rows={3}
+            value={values}
+            required
+            helperText={helperText}
+            error={error}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            fullWidth
+          />
+        </Tooltip>
       </Box>
     </Box>
   );

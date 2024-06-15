@@ -13,7 +13,7 @@ import IProcessName from "./interface/IProcessName";
 import IRiskRatingMap from "./interface/IRiskRatingMap";
 import ISelectOption from "./interface/ISelectOption";
 import ITable from "./interface/ITable";
-import { collectionMethodLabel, dataCollectionTitle, dataDisclosureQuestion1, dataDisclosureQuestion2, dataDisclosureQuestion3, dataDisclosureQuestion4, dataDisclosureQuestion5, dataDisclosureTitle, dataSourceLabel, dataStorageDisposalQuestion1, dataStorageDisposalQuestion2, dataStorageDisposalQuestion3, dataStorageDisposalTitle, timingOfCollectionLabel } from "./string";
+import { assessmentVersion, collectionMethodLabel, dataCollectionTitle, dataDisclosureQuestion1, dataDisclosureQuestion2, dataDisclosureQuestion3, dataDisclosureQuestion4, dataDisclosureQuestion5, dataDisclosureTitle, dataSourceLabel, dataStorageDisposalQuestion1, dataStorageDisposalQuestion2, dataStorageDisposalQuestion3, dataStorageDisposalTitle, timingOfCollectionLabel } from "./string";
 
 export const userNavigationList: INavigationList[] = [
   { name: "Home", icon: IconHome, url: "/home" },
@@ -64,6 +64,7 @@ export const processNameList: IProcessName[] = [
 
 export const dataProcessingQuestions: IDataProcessingQuestions[] = [
   {
+    version: assessmentVersion,
     title: dataCollectionTitle,
     questions: [
       dataSourceLabel,
@@ -72,6 +73,7 @@ export const dataProcessingQuestions: IDataProcessingQuestions[] = [
     ],
   },
   {
+    version: assessmentVersion,
     title: dataDisclosureTitle,
     questions: [
       dataDisclosureQuestion1,
@@ -82,6 +84,7 @@ export const dataProcessingQuestions: IDataProcessingQuestions[] = [
     ],
   },
   {
+    version: assessmentVersion,
     title: dataStorageDisposalTitle,
     questions: [
       dataStorageDisposalQuestion1,

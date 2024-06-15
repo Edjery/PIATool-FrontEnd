@@ -29,7 +29,7 @@ import {
 } from "../../../values/string";
 import FormContainer from "../../common/FormContainer";
 import IRiskAssessment from "../interface/IRiskAssessment";
-import riskAssessmentSchema from "./riskAssessmentSchema";
+import riskAssessmentSchema from "../schema/riskAssessmentSchema";
 
 const formColumnHeaders = [
   riskAssessmentColumn1,
