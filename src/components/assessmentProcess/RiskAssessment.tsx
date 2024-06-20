@@ -6,6 +6,7 @@ import IRiskAssessment from "./interface/IRiskAssessment";
 import Description from "./riskAssessment/Description";
 import TableCalculations from "./riskAssessment/TableCalculations";
 import TableForm from "./riskAssessment/TableForm";
+import RiskRatingMap from "./riskAssessment/RiskRatingMap";
 
 const RiskAssessment = () => {
   const [riskAssessment, setRiskAssessment] = useState<IRiskAssessment[]>([]);
@@ -25,6 +26,7 @@ const RiskAssessment = () => {
         formInitialValues={formInitialValues}
       />
       <TableCalculations rowData={riskAssessment} />
+      <RiskRatingMap />
       <Description />
       <BottomButtonNavigators />
     </CardContainer>

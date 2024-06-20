@@ -95,10 +95,10 @@ export const dataProcessingQuestions: IDataProcessingQuestions[] = [
 ];
 
 export const riskRatingMapList: IRiskRatingMap[] = [
-  { rating: "1", description: "Negligible" },
-  { rating: "2 - 4", description: "Low Risk" },
-  { rating: "6 - 9", description: "Medium Risk" },
-  { rating: "10 - 16", description: "High Risk" },
+  { rating: "1", description: "Negligible", color: "#fafdff" },
+  { rating: "2 - 4", description: "Low Risk", color: "#ffffcc" },
+  { rating: "6 - 9", description: "Medium Risk", color: "#ffff99" },
+  { rating: "10 - 16", description: "High Risk", color: "#ff9999" },
 ]
 
 export const riskAssessmentOptions: ISelectOption[] = [
