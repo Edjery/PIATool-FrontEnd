@@ -3,12 +3,12 @@ import { ChangeEvent } from "react";
 import { btnFileUpload } from "../../../values/string";
 
 interface Props {
-  handleFileChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   file: File | null;
   fileUrl: string | null;
 }
 
-const FileInput = ({ handleFileChange, file, fileUrl }: Props) => {
+const FileInput = ({ onChange, file, fileUrl }: Props) => {
   return (
     <Box>
       <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
@@ -18,7 +18,7 @@ const FileInput = ({ handleFileChange, file, fileUrl }: Props) => {
             type="file"
             style={{ display: "none" }}
             accept="image/*"
-            onChange={handleFileChange}
+            onChange={onChange}
           />
         </Button>
         <Typography sx={{ mx: "2vh" }}>{file && file.name}</Typography>

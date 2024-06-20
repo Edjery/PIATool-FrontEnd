@@ -2,7 +2,7 @@ import { dataProcessingQuestions } from "../../../values/list";
 import IDataProcess from "../interface/IDataProcess";
 import IDataProcessingEntry from "../interface/IDataProcessingEntry";
 
-const formInitialValues: IDataProcess = {
+const initialDataProcessValues: IDataProcess = {
     dataSubjects: "",
     formName: "",
     dataField: [],
@@ -23,7 +23,7 @@ dataProcessingQuestions.forEach((section, sectionIndex) => {
         });
     });
 
-    formInitialValues.dataProcessing.push(entries);
+    initialDataProcessValues.dataProcessing.push(entries);
 });
 
-export default formInitialValues
+export default initialDataProcessValues

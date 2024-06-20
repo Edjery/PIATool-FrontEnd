@@ -41,20 +41,21 @@ import CardContainerTitle from "../common/CardContainerTitle";
 import FormContainer from "../common/FormContainer";
 import FormTextAreaField from "../common/FormTextAreaField";
 import FormTextField from "../common/FormTextField";
-import formInitialValues from "./initialValues/dataProcessInitialValues";
+import initialDataProcessValues from "./initialValues/initialDataProcessValues";
 import IDataProcess from "./interface/IDataProcess";
 import dataProcessSchema from "./schema/dataProcessSchema";
 
-const handleSubmit = (values: IDataProcess) => {
-  console.log("Form submitted:", values);
-};
+interface Props {
+  initialData: IDataProcess | null;
+  onSubmit: (values: IDataProcess) => void;
+}
 
-const DataProcess = () => (
+const DataProcess = ({ initialData, onSubmit }: Props) => (
   <CardContainer variant="lg">
     <Formik
-      initialValues={formInitialValues}
+      initialValues={initialData || initialDataProcessValues}
       validationSchema={dataProcessSchema}
-      onSubmit={handleSubmit}
+      onSubmit={onSubmit}
     >
       {({ values, touched, errors, handleChange, handleBlur }) => (
         <Form>

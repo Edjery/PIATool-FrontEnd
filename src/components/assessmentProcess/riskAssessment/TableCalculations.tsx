@@ -29,7 +29,7 @@ interface Props {
 const TableCalculations = ({ rowData }: Props) => {
   return (
     <Box>
-      {rowData.length > 0 && (
+      {rowData.length > 0 && rowData[0].impactRating != "" && (
         <TableContainer sx={{ marginBottom: "2vh" }}>
           <Table sx={{ tableLayout: "auto" }}>
             <TableHead>

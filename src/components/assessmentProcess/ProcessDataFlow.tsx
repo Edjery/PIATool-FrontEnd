@@ -10,38 +10,38 @@ import FileInput from "./dataFlow/FileInput";
 import Guide from "./dataFlow/Guide";
 import Header from "./dataFlow/Header";
 
-const ProcessDataFlow = () => {
-  const [file, setFile] = useState<File | null>(null);
+interface Props {
+  file: File | null;
+  onChange: (imageFile: File | null) => void;
+}
+
+const ProcessDataFlow = ({ onChange, file }: Props) => {
   const [fileURL, setFileURL] = useState<string | null>(null);
 
-  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const onFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const selectedFile = event.target.files?.[0];
 
     if (selectedFile) {
       if (!imgAcceptedFormat.includes(selectedFile.type)) {
         alert(imgTypeError);
-        setFile(null);
+        onChange(null);
         return;
       }
 
       if (selectedFile.size > imgMaxFileSize) {
         alert(imgSizeError);
-        setFile(null);
+        onChange(null);
         return;
       }
 
-      setFile(selectedFile);
       setFileURL(URL.createObjectURL(selectedFile));
+      onChange(selectedFile);
     }
   };
   return (
     <CardContainer variant="lg">
       <Header />
-      <FileInput
-        file={file}
-        fileUrl={fileURL}
-        handleFileChange={handleFileChange}
-      />
+      <FileInput file={file} fileUrl={fileURL} onChange={onFileChange} />
       <Guide />
     </CardContainer>
   );

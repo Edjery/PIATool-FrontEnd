@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import CardContainer from "../common/CardContainer";
-import formInitialValues from "./initialValues/riskAssessmentInitialValues";
+import initialRiskAssessmentValues from "./initialValues/initialRiskAssessmentValues";
 import IRiskAssessment from "./interface/IRiskAssessment";
 import Description from "./riskAssessment/Description";
 import Header from "./riskAssessment/Header";
@@ -8,25 +7,20 @@ import RiskRatingMap from "./riskAssessment/RiskRatingMap";
 import TableCalculations from "./riskAssessment/TableCalculations";
 import TableForm from "./riskAssessment/TableForm";
 
-const RiskAssessment = () => {
-  const [riskAssessment, setRiskAssessment] = useState<IRiskAssessment[]>([]);
+interface Props {
+  onSubmit: (riskAssessmentList: IRiskAssessment[]) => void;
+  riskAssessments: IRiskAssessment[];
+}
 
-  const handleRiskAssessmentData = (riskAssessmentList: IRiskAssessment[]) => {
-    setRiskAssessment(riskAssessmentList);
-  };
-
-  useEffect(() => {
-    console.log(riskAssessment);
-  }, [riskAssessment]);
-
+const RiskAssessment = ({ onSubmit, riskAssessments }: Props) => {
   return (
     <CardContainer variant="lg">
       <Header />
       <TableForm
-        onSubmit={handleRiskAssessmentData}
-        formInitialValues={formInitialValues}
+        onSubmit={onSubmit}
+        formInitialValues={initialRiskAssessmentValues}
       />
-      <TableCalculations rowData={riskAssessment} />
+      <TableCalculations rowData={riskAssessments} />
       <RiskRatingMap />
       <Description />
     </CardContainer>

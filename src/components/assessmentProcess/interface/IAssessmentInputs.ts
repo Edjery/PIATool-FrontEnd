@@ -3,8 +3,8 @@ import IRecommendedSolution from "./IRecommendedSolution";
 import IRiskAssessment from "./IRiskAssessment";
 
 interface IAssessmentInputs {
-    processName: string | null;
-    piaVersion: string | null;
+    processName: string | "";
+    piaVersion: string | "";
     dataProcess: IDataProcess | null;
     riskAssessments: IRiskAssessment[];
     dataFlow: File | null;

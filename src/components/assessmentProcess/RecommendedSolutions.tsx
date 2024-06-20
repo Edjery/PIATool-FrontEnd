@@ -1,30 +1,22 @@
-import { useEffect, useState } from "react";
 import CardContainer from "../common/CardContainer";
-import formInitialValues from "./initialValues/recommendationSolutionInitialValues";
+import initialRecommendationSolutionValues from "./initialValues/initialRecommendationSolutionValues";
 import IRecommendedSolution from "./interface/IRecommendedSolution";
 import Header from "./recommendedSolution/Header";
 import TableCalculations from "./recommendedSolution/TableCalculations";
 import TableForm from "./recommendedSolution/TableForm";
 
-const RecommendedSolutions = () => {
-  const [recommendedSolutions, setRecommendationSolution] = useState<
-    IRecommendedSolution[]
-  >([]);
+interface Props {
+  onSubmit: (recommendedSolutions: IRecommendedSolution[]) => void;
+  recommendedSolutions: IRecommendedSolution[];
+}
 
-  const handleSubmit = (recommendedSolutions: IRecommendedSolution[]) => {
-    setRecommendationSolution(recommendedSolutions);
-  };
-
-  useEffect(() => {
-    console.log(recommendedSolutions);
-  }, [recommendedSolutions]);
-
+const RecommendedSolutions = ({ onSubmit, recommendedSolutions }: Props) => {
   return (
     <CardContainer variant="lg">
       <Header />
       <TableForm
-        formInitialValues={formInitialValues}
-        onSubmit={handleSubmit}
+        formInitialValues={initialRecommendationSolutionValues}
+        onSubmit={onSubmit}
       />
       <TableCalculations rowData={recommendedSolutions} />
     </CardContainer>

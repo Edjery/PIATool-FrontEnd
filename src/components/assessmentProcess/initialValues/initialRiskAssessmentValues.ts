@@ -1,6 +1,6 @@
 import IRiskAssessment from "../interface/IRiskAssessment";
 
-const formInitialValues: IRiskAssessment[] = [
+const initialRiskAssessmentValues: IRiskAssessment[] = [
     {
         id: Math.random(),
         riskName: "",
@@ -9,4 +9,4 @@ const formInitialValues: IRiskAssessment[] = [
     },
 ];
 
-export default formInitialValues
+export default initialRiskAssessmentValues

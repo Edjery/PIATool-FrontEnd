@@ -1,6 +1,6 @@
 import IRecommendedSolution from "../interface/IRecommendedSolution";
 
-const formInitialValues: IRecommendedSolution[] = [
+const initialRecommendationSolutionValues: IRecommendedSolution[] = [
     {
         id: Math.random(),
         name: "",
@@ -8,4 +8,4 @@ const formInitialValues: IRecommendedSolution[] = [
     },
 ];
 
-export default formInitialValues
+export default initialRecommendationSolutionValues
