@@ -5,6 +5,7 @@ import Disclaimer from "./assessmentProcess/Disclaimer";
 import ProcessName from "./assessmentProcess/ProcessName";
 import DataProcess from "./assessmentProcess/DataProcess";
 import RiskAssessment from "./assessmentProcess/RiskAssessment";
+import ProcessDataFlow from "./assessmentProcess/ProcessDataFlow";
 
 const MainContent = () => (
   <Box
@@ -23,8 +24,9 @@ const MainContent = () => (
     {/* <UserHomePage /> */}
     {/* <Disclaimer /> */}
     {/* <ProcessName /> */}
-    <DataProcess />
+    {/* <DataProcess /> */}
     {/* <RiskAssessment /> */}
+    <ProcessDataFlow />
   </Box>
 );
 

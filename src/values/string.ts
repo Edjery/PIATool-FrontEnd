@@ -1,9 +1,10 @@
 export const websiteHeader = "Privacy Impact Assessment"
-
 export const schoolName = "University of Southeastern Philippines"
 
 export const sideBarHeaderTitle = "USeP Privacy Impact Assessment Tool"
 export const sideBarSubHeaderTitle = "College of Information and Computing"
+
+export const visit = "Visit"
 
 export const disclaimerTitle = "Disclaimer"
 export const processNameDescription = "Select the process name of this Privacy Impact Assessment"
@@ -55,7 +56,6 @@ export const riskAssessmentDescription = "In this form you will be using the ris
 export const riskAssessmentColumn1 = "Threat/Vulnerability"
 export const riskAssessmentColumn2 = "Impact"
 export const riskAssessmentColumn3 = "Probability"
-export const tableColumnAction = "Action"
 export const riskAssessmentColumn4 = "Risk Rating"
 export const riskRatingMapTitle = "Risk Rating Map"
 export const riskRatingColumn1 = "Rating"
@@ -63,8 +63,17 @@ export const riskRatingColumn2 = "Types"
 export const riskRatingDescriptionA = "For the purpose of this section, a risk refers to the potential of an incident to result in harm or danger to a data subject or organization. Risks are those that could lead to the unauthorized collection, use, disclosure or access to personal data. It includes risks that the confidentiality, integrity and availability of personal data will not be maintained, or the risk that processing will violate rights of data subjects or privacy principles (transparency, legitimacy and proportionality)."
 export const riskRatingDescriptionB = "The first step in managing risks is to identify them, including threats and vulnerabilities, and by evaluating its impact and probability"
 
+export const processDataFlowsTitle = "Process Data Flows"
+export const processDataFlowDescription = "In this section you will submit the Process Data Flow as an image, created using a third-party software for making diagram and charts"
+export const processDataFlowInstructionsA = visit
+export const processDataFlowInstructionsB = "to start making the process data flow"
+export const processDataFlowImgLabel = "File Input"
+export const processDataColumnA = "Sample"
+export const processDataColumnB = "Legend"
+
 export const noteLabel = "Note: "
 export const notApplicableNote = "Put N/A if not applicable"
+export const tableColumnAction = "Action"
 export const btnStart = "Start"
 export const btnBack = "Back"
 export const btnNext = "Next"
@@ -75,3 +84,8 @@ export const btnRemove = "Remove"
 export const btnAddProcess = "Add Process"
 export const btnCalculate = "Calculate"
 export const btnToggleDescription = "Toggle Description"
+export const btnToggleGuide = "Toggle Guide"
+export const btnFileUpload = "Choose File"
+
+export const linkDiagram = "diagrams.net"
+

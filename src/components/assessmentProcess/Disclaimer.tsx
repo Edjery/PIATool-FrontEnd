@@ -1,6 +1,7 @@
 import { Box, Button, Link, Typography } from "@mui/material";
 import { btnStart, disclaimerTitle } from "../../values/string";
 import CardContainer from "../common/CardContainer";
+import { urlNpcPia } from "../../values/values";
 
 const Disclaimer = () => {
   return (
@@ -11,11 +12,7 @@ const Disclaimer = () => {
       <Box sx={{ textAlign: "justify", mt: 2 }}>
         <Typography variant="body1">
           This{" "}
-          <Link
-            href="https://privacy.gov.ph/wp-content/uploads/2022/01/NPC_PIA_0618.pdf"
-            target="_blank"
-            sx={{ fontWeight: "bold" }}
-          >
+          <Link href={urlNpcPia} target="_blank" sx={{ fontWeight: "bold" }}>
             Privacy Impact Assessment
           </Link>{" "}
           (PIA) is an instrument for assessing the potential impacts on privacy

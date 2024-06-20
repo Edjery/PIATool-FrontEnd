@@ -1,19 +1,9 @@
-import { Box } from "@mui/material";
+import ImageBox from "./ImageBox";
 
 interface Props {
   img: string;
 }
 
-const CustomIcon = ({ img }: Props) => {
-  return (
-    <Box
-      component="img"
-      src={img}
-      sx={{
-        height: "5vh",
-      }}
-    />
-  );
-};
+const CustomIcon = ({ img }: Props) => <ImageBox img={img} height={"5vh"} />;
 
 export default CustomIcon;
