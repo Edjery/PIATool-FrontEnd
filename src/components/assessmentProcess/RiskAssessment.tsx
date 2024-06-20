@@ -7,7 +7,7 @@ import Description from "./riskAssessment/Description";
 import TableCalculations from "./riskAssessment/TableCalculations";
 import TableForm from "./riskAssessment/TableForm";
 import RiskRatingMap from "./riskAssessment/RiskRatingMap";
-import TitleDescription from "./riskAssessment/TitleDescription";
+import Header from "./riskAssessment/Header";
 
 const RiskAssessment = () => {
   const [riskAssessment, setRiskAssessment] = useState<IRiskAssessment[]>([]);
@@ -22,7 +22,7 @@ const RiskAssessment = () => {
 
   return (
     <CardContainer variant="lg">
-      <TitleDescription />
+      <Header />
       <TableForm
         onSubmit={handleRiskAssessmentData}
         formInitialValues={formInitialValues}

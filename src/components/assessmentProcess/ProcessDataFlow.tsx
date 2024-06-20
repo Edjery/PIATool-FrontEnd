@@ -9,7 +9,7 @@ import BottomButtonNavigators from "../common/BottomButtonNavigators";
 import CardContainer from "../common/CardContainer";
 import FileInput from "./dataFlow/FileInput";
 import Guide from "./dataFlow/Guide";
-import TitleDescription from "./dataFlow/TitleDescription";
+import Header from "./dataFlow/Header";
 
 const ProcessDataFlow = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -37,7 +37,7 @@ const ProcessDataFlow = () => {
   };
   return (
     <CardContainer variant="lg">
-      <TitleDescription />
+      <Header />
       <FileInput
         file={file}
         fileUrl={fileURL}

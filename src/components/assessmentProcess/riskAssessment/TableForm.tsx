@@ -18,6 +18,7 @@ import { FieldArray, Form, Formik, getIn } from "formik";
 import { IconDelete } from "../../../values/icons";
 import { riskAssessmentOptions } from "../../../values/list";
 import {
+  btnAdd,
   btnCalculate,
   riskAssessmentColumn1,
   riskAssessmentColumn2,
@@ -96,7 +97,6 @@ const TableForm = ({ onSubmit, formInitialValues }: Props) => {
                             <TableRow key={risk.id}>
                               <TableCell>
                                 <TextField
-                                  margin="normal"
                                   variant="outlined"
                                   name={riskName}
                                   value={risk.riskName}
@@ -211,7 +211,7 @@ const TableForm = ({ onSubmit, formInitialValues }: Props) => {
                                 })
                               }
                             >
-                              Add
+                              {btnAdd}
                             </Button>
                           </TableCell>
                         </TableRow>

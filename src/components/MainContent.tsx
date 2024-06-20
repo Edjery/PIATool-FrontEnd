@@ -6,6 +6,7 @@ import ProcessName from "./assessmentProcess/ProcessName";
 import DataProcess from "./assessmentProcess/DataProcess";
 import RiskAssessment from "./assessmentProcess/RiskAssessment";
 import ProcessDataFlow from "./assessmentProcess/ProcessDataFlow";
+import RecommendedSolutions from "./assessmentProcess/RecommendedSolutions";
 
 const MainContent = () => (
   <Box
@@ -26,7 +27,8 @@ const MainContent = () => (
     {/* <ProcessName /> */}
     {/* <DataProcess /> */}
     {/* <RiskAssessment /> */}
-    <ProcessDataFlow />
+    {/* <ProcessDataFlow /> */}
+    <RecommendedSolutions />
   </Box>
 );
 

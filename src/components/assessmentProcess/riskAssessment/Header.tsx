@@ -6,7 +6,7 @@ import {
 import CardContainerDescription from "../../common/CardContainerDescription";
 import CardContainerTitle from "../../common/CardContainerTitle";
 
-const TitleDescription = () => {
+const Header = () => {
   return (
     <Box>
       <CardContainerTitle title={riskAssessmentTitle} />
@@ -15,4 +15,4 @@ const TitleDescription = () => {
   );
 };
 
-export default TitleDescription;
+export default Header;

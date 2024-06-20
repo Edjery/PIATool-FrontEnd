@@ -10,7 +10,7 @@ import { urlDiagram } from "../../../values/values";
 import CardContainerDescription from "../../common/CardContainerDescription";
 import CardContainerTitle from "../../common/CardContainerTitle";
 
-const TitleDescription = () => {
+const Header = () => {
   return (
     <Box sx={{ mb: "2vh" }}>
       <CardContainerTitle title={processDataFlowsTitle} />
@@ -31,4 +31,4 @@ const TitleDescription = () => {
   );
 };
 
-export default TitleDescription;
+export default Header;
