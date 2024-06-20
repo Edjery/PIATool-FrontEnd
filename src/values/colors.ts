@@ -9,3 +9,5 @@ export const usepDarkPrimaryColor = "#460000";
 export const usepSecondaryColor = "#FFFF00";
 export const usepTextPrimaryColor = "white";
 export const usepTextSecondaryColor = "#FFFF00";
+
+export const hintLabelColor = "gray";

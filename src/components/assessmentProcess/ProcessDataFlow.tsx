@@ -5,7 +5,6 @@ import {
   imgSizeError,
   imgTypeError,
 } from "../../values/values";
-import BottomButtonNavigators from "../common/BottomButtonNavigators";
 import CardContainer from "../common/CardContainer";
 import FileInput from "./dataFlow/FileInput";
 import Guide from "./dataFlow/Guide";
@@ -44,7 +43,6 @@ const ProcessDataFlow = () => {
         handleFileChange={handleFileChange}
       />
       <Guide />
-      <BottomButtonNavigators />
     </CardContainer>
   );
 };

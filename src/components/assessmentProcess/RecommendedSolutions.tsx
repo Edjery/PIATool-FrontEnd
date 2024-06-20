@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import BottomButtonNavigators from "../common/BottomButtonNavigators";
 import CardContainer from "../common/CardContainer";
 import formInitialValues from "./initialValues/recommendationSolutionInitialValues";
 import IRecommendedSolution from "./interface/IRecommendedSolution";
@@ -28,7 +27,6 @@ const RecommendedSolutions = () => {
         onSubmit={handleSubmit}
       />
       <TableCalculations rowData={recommendedSolutions} />
-      <BottomButtonNavigators />
     </CardContainer>
   );
 };

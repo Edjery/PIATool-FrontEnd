@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Divider,
   FormControl,
   MenuItem,
@@ -13,7 +12,6 @@ import { processNameList } from "../../values/list";
 import {
   assessmentVersion,
   assessmentVersionName,
-  btnNext,
   processNameDescription,
   processNameLabel,
 } from "../../values/string";
@@ -45,18 +43,17 @@ const ProcessName = () => {
       >
         <Select value={processName} onChange={handleChange} displayEmpty>
           {processNameList.map((process) => (
-            <MenuItem value={process.id}>{process.name}</MenuItem>
+            <MenuItem value={process.id} key={process.id}>
+              {process.name}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>
       <Box sx={{ marginY: "2vh", paddingX: "1vh" }}>
-        <Button variant="contained" fullWidth>
-          {btnNext}
-        </Button>
+        <Typography>
+          {assessmentVersionName} {assessmentVersion}
+        </Typography>
       </Box>
-      <Typography>
-        {assessmentVersionName} {assessmentVersion}
-      </Typography>
     </CardContainer>
   );
 };

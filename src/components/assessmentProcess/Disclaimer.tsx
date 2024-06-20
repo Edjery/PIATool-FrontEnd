@@ -1,6 +1,5 @@
-import { Box, Button, Link, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import {
-  btnStart,
   disclaimerLinkPia,
   disclaimerParagraphA1,
   disclaimerParagraphA2,
@@ -8,8 +7,8 @@ import {
   disclaimerParagraphC,
   disclaimerTitle,
 } from "../../values/string";
-import CardContainer from "../common/CardContainer";
 import { urlNpcPia } from "../../values/values";
+import CardContainer from "../common/CardContainer";
 
 const Paragraph = ({ paragraph }: { paragraph: string }) => (
   <Typography variant="body1" sx={{ mt: 2 }}>
@@ -33,9 +32,6 @@ const Disclaimer = () => {
         </Typography>
         <Paragraph paragraph={disclaimerParagraphB} />
         <Paragraph paragraph={disclaimerParagraphC} />
-      </Box>
-      <Box sx={{ marginTop: "3vh" }}>
-        <Button variant="contained">{btnStart}</Button>;
       </Box>
     </CardContainer>
   );
