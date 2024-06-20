@@ -1,7 +1,21 @@
 import { Box, Button, Link, Typography } from "@mui/material";
-import { btnStart, disclaimerTitle } from "../../values/string";
+import {
+  btnStart,
+  disclaimerLinkPia,
+  disclaimerParagraphA1,
+  disclaimerParagraphA2,
+  disclaimerParagraphB,
+  disclaimerParagraphC,
+  disclaimerTitle,
+} from "../../values/string";
 import CardContainer from "../common/CardContainer";
 import { urlNpcPia } from "../../values/values";
+
+const Paragraph = ({ paragraph }: { paragraph: string }) => (
+  <Typography variant="body1" sx={{ mt: 2 }}>
+    {paragraph}
+  </Typography>
+);
 
 const Disclaimer = () => {
   return (
@@ -11,30 +25,14 @@ const Disclaimer = () => {
       </Typography>
       <Box sx={{ textAlign: "justify", mt: 2 }}>
         <Typography variant="body1">
-          This{" "}
+          {disclaimerParagraphA1}{" "}
           <Link href={urlNpcPia} target="_blank" sx={{ fontWeight: "bold" }}>
-            Privacy Impact Assessment
+            {disclaimerLinkPia}
           </Link>{" "}
-          (PIA) is an instrument for assessing the potential impacts on privacy
-          of a process, information system, program, software module, device or
-          other initiative which processes personal information and sensitive
-          information in consultation with stakeholders, for taking actions as
-          necessary to treat, mitigate and avoid privacy risk.
+          {disclaimerParagraphA2}
         </Typography>
-        <Typography variant="body1" sx={{ mt: 2 }}>
-          This PIA is more than a tool, it is a process that begins at the
-          earliest possible stages of an initiative when there are still
-          opportunities to influence its outcome and thereby ensure privacy by
-          design. It is a process that continues until, and even after, the
-          project has been deployed. Initiatives vary substantially in scale and
-          impact.
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 2 }}>
-          This website will help you create a PIA following a step-by-step
-          instructional process that will result in a PIA report that may
-          include documentation about measures taken for risk treatment to be
-          monitored and reviewed by the DPO (Data Protection Officer).
-        </Typography>
+        <Paragraph paragraph={disclaimerParagraphB} />
+        <Paragraph paragraph={disclaimerParagraphC} />
       </Box>
       <Box sx={{ marginTop: "3vh" }}>
         <Button variant="contained">{btnStart}</Button>;

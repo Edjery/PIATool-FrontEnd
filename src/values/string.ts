@@ -7,6 +7,12 @@ export const sideBarSubHeaderTitle = "College of Information and Computing"
 export const visit = "Visit"
 
 export const disclaimerTitle = "Disclaimer"
+export const disclaimerParagraphA1 = "This"
+export const disclaimerLinkPia = "Privacy Impact Assessment"
+export const disclaimerParagraphA2 = "(PIA) is an instrument for assessing the potential impacts on privacy of a process, information system, program, software module, device or other initiative which processes personal information and sensitive information in consultation with stakeholders, for taking actions as necessary to treat, mitigate and avoid privacy risk."
+export const disclaimerParagraphB = "This PIA is more than a tool, it is a process that begins at the earliest possible stages of an initiative when there are still opportunities to influence its outcome and thereby ensure privacy by design. It is a process that continues until, and even after, the project has been deployed. Initiatives vary substantially in scale and impact."
+export const disclaimerParagraphC = "This website will help you create a PIA following a step-by-step instructional process that will result in a PIA report that may include documentation about measures taken for risk treatment to be monitored and reviewed by the DPO (Data Protection Officer)."
+
 export const processNameDescription = "Select the process name of this Privacy Impact Assessment"
 export const processNameLabel = "Process Name: "
 
