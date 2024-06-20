@@ -37,9 +37,11 @@ import FormTextField from "../../common/FormTextField";
 import formInitialValues from "../initialValues/dataProcessInitialValues";
 import IDataProcess from "../interface/IDataProcess";
 import dataProcessSchema from "../schema/dataProcessSchema";
+import CardContainerTitle from "../../common/CardContainerTitle";
+import CardContainerDescription from "../../common/CardContainerDescription";
 
 const handleSubmit = (values: IDataProcess) => {
-  // console.log("Form submitted:", values);
+  console.log("Form submitted:", values);
 };
 
 const DataProcessSection = () => {
@@ -51,15 +53,8 @@ const DataProcessSection = () => {
     >
       {({ values, touched, errors, handleChange, handleBlur }) => (
         <Form>
-          <Typography
-            variant="h6"
-            sx={{ textAlign: "left", fontWeight: "bold" }}
-          >
-            {processDescriptionTitle}
-          </Typography>
-          <Typography variant="body1" sx={{ textAlign: "justify" }}>
-            {processDescription}
-          </Typography>
+          <CardContainerTitle title={processDescriptionTitle} />
+          <CardContainerDescription description={processDescription} />
           <FormContainer variant="lg" title={processTitle}>
             <FormTextField
               title={dataSubjectHint}
@@ -155,16 +150,10 @@ const DataProcessSection = () => {
               handleBlur={handleBlur}
             />
           </FormContainer>
-
-          <Typography
-            variant="h6"
-            sx={{ textAlign: "left", fontWeight: "bold" }}
-          >
-            {processLevelAnalysisTitle}
-          </Typography>
-          <Typography variant="body1" sx={{ textAlign: "justify" }}>
-            {processLevelAnalysisDescription}
-          </Typography>
+          <CardContainerTitle title={processLevelAnalysisTitle} />
+          <CardContainerDescription
+            description={processLevelAnalysisDescription}
+          />
           {dataProcessingQuestions.map((section, sectionIndex) => (
             <FormContainer
               variant="lg"
@@ -200,7 +189,7 @@ const DataProcessSection = () => {
             type="submit"
             onClick={() =>
               values.dataField.length === 0
-                ? console.log("Please add at least one data field")
+                ? console.log("Please add at least one data field") // #TODO add alert
                 : null
             }
           >

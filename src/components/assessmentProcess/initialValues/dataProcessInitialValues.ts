@@ -14,7 +14,7 @@ const formInitialValues: IDataProcess = {
 dataProcessingQuestions.forEach((section, sectionIndex) => {
     const entries: IDataProcessingEntry[] = [];
 
-    section.questions.forEach((question, questionIndex) => {
+    section.questions.forEach((_question, questionIndex) => {
         entries.push({
             version: section.version,
             sectionId: sectionIndex,

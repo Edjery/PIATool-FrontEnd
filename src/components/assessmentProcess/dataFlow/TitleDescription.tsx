@@ -1,4 +1,4 @@
-import { Box, Link, Typography } from "@mui/material";
+import { Box, Link } from "@mui/material";
 import {
   linkDiagram,
   processDataFlowDescription,
@@ -7,20 +7,17 @@ import {
   processDataFlowsTitle,
 } from "../../../values/string";
 import { urlDiagram } from "../../../values/values";
+import CardContainerDescription from "../../common/CardContainerDescription";
+import CardContainerTitle from "../../common/CardContainerTitle";
 
 const TitleDescription = () => {
   return (
     <Box sx={{ mb: "2vh" }}>
-      <Typography variant="h6" sx={{ textAlign: "left", fontWeight: "bold" }}>
-        {processDataFlowsTitle}
-      </Typography>
-      <Typography variant="body1" sx={{ textAlign: "justify" }}>
-        {processDataFlowDescription}
-      </Typography>
+      <CardContainerTitle title={processDataFlowsTitle} />
+      <CardContainerDescription description={processDataFlowDescription} />
+
       <Box sx={{ display: "flex", flexDirection: "row" }}>
-        <Typography variant="body1" sx={{ textAlign: "justify" }}>
-          {processDataFlowInstructionsA}
-        </Typography>
+        <CardContainerDescription description={processDataFlowInstructionsA} />
         <Link
           href={urlDiagram}
           target="_blank"
@@ -28,9 +25,7 @@ const TitleDescription = () => {
         >
           {linkDiagram}
         </Link>
-        <Typography variant="body1" sx={{ textAlign: "justify" }}>
-          {processDataFlowInstructionsB}
-        </Typography>
+        <CardContainerDescription description={processDataFlowInstructionsB} />
       </Box>
     </Box>
   );

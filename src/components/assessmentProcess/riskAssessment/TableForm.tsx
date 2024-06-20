@@ -13,7 +13,6 @@ import {
   TableHead,
   TableRow,
   TextField,
-  Typography,
 } from "@mui/material";
 import { FieldArray, Form, Formik, getIn } from "formik";
 import { IconDelete } from "../../../values/icons";
@@ -23,7 +22,6 @@ import {
   riskAssessmentColumn1,
   riskAssessmentColumn2,
   riskAssessmentColumn3,
-  riskAssessmentDescription,
   riskAssessmentTitle,
   tableColumnAction,
 } from "../../../values/string";
@@ -45,14 +43,7 @@ interface Props {
 
 const TableForm = ({ onSubmit, formInitialValues }: Props) => {
   return (
-    <Box sx={{ textAlign: "left" }}>
-      <Typography variant="h6" sx={{ textAlign: "left", fontWeight: "bold" }}>
-        {riskAssessmentTitle}
-      </Typography>
-      <Typography variant="body1" sx={{ textAlign: "justify" }}>
-        {riskAssessmentDescription}
-      </Typography>
-
+    <Box>
       <FormContainer variant="lg" title={riskAssessmentTitle}>
         <Formik
           initialValues={{ riskAssessments: formInitialValues }}
