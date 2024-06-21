@@ -16,10 +16,24 @@ import {
 import CollapseBox from "../../common/CollapseBox";
 import ImageBox from "../../common/ImageBox";
 
+const dataFlowGuideStyles = {
+  tableContainer: {
+    marginBottom: "2vh",
+  },
+  tableHeadCell: {
+    fontSize: "3vh",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  tableBodyCell: {
+    textAlign: "center",
+  },
+};
+
 const Guide = () => {
   return (
     <CollapseBox ButtonName={btnToggleGuide}>
-      <TableContainer sx={{ marginBottom: "2vh" }}>
+      <TableContainer sx={dataFlowGuideStyles.tableContainer}>
         <Table>
           <TableHead>
             <TableRow>
@@ -32,23 +46,17 @@ const Guide = () => {
               >
                 {processDataColumnA}
               </TableCell>
-              <TableCell
-                sx={{
-                  fontSize: "3vh",
-                  fontWeight: "bold",
-                  textAlign: "center",
-                }}
-              >
+              <TableCell sx={dataFlowGuideStyles.tableHeadCell}>
                 {processDataColumnB}
               </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             <TableRow>
-              <TableCell sx={{ textAlign: "center" }}>
+              <TableCell sx={dataFlowGuideStyles.tableBodyCell}>
                 <ImageBox img={sampleFlowChart} height="50vh" />
               </TableCell>
-              <TableCell sx={{ textAlign: "center" }}>
+              <TableCell sx={dataFlowGuideStyles.tableBodyCell}>
                 <ImageBox img={legendFlowChart} height="50vh" />
               </TableCell>
             </TableRow>
