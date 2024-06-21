@@ -226,7 +226,7 @@ const DataProcess = ({ initialData, onSubmit, stepControls }: Props) => {
               >
                 {btnValidate}
               </Button>
-              <Typography sx={{ color: hintLabelColor, my: "1vh" }}>
+              <Typography color={hintLabelColor} my="1vh">
                 {noteLabel}
                 {dataProcessNoteDescription}
               </Typography>
