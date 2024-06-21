@@ -106,6 +106,7 @@ export const btnToggleGuide = "Toggle Guide"
 export const btnFileUpload = "Choose File"
 export const btnSubmit = "Submit"
 export const btnOrder = "Order"
-
 export const linkDiagram = "diagrams.net"
 
+export const errorHeader = "Oops!"
+export const errorSubHeader = "Sorry, an unexpected error has occurred."
