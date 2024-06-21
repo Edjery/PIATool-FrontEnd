@@ -23,7 +23,7 @@ const TableCalculations = ({ rowData }: Props) => {
   rowData.sort((a, b) => parseInt(a.priorityNo) - parseInt(b.priorityNo));
   return (
     <Box>
-      {rowData.length > 0 && (
+      {rowData.length > 0 && rowData[0].priorityNo != "" && (
         <TableContainer sx={{ marginBottom: "2vh" }}>
           <Table sx={{ tableLayout: "auto" }}>
             <TableHead>
