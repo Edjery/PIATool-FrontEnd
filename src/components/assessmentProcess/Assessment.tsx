@@ -16,7 +16,6 @@ import {
   recommendedSolTitle,
   riskAssessmentTitle,
 } from "../../values/string";
-import ButtonStepsNavigator from "../common/ButtonNavigator";
 import DataProcess from "./DataProcess";
 import Disclaimer from "./Disclaimer";
 import initialAssessmentInputs from "./initialValues/initialAssessmentInputs";
@@ -24,6 +23,7 @@ import IAssessmentInputs from "./interface/IAssessmentInputs";
 import IDataProcess from "./interface/IDataProcess";
 import IRecommendedSolution from "./interface/IRecommendedSolution";
 import IRiskAssessment from "./interface/IRiskAssessment";
+import IStepsComponents from "./interface/IStepsComponents";
 import ProcessDataFlow from "./ProcessDataFlow";
 import ProcessName from "./ProcessName";
 import RecommendedSolutions from "./RecommendedSolutions";
@@ -33,6 +33,14 @@ import recommendedSolutionSchema from "./schema/recommendedSolution";
 import riskAssessmentSchema from "./schema/riskAssessmentSchema";
 
 const currentAssessmentVersion = assessmentVersion;
+const stepsLabel = [
+  disclaimerTitle,
+  processNameTitle,
+  processDescriptionTitle,
+  riskAssessmentTitle,
+  processDataFlowsTitle,
+  recommendedSolTitle,
+];
 
 const Assessment = () => {
   // init
@@ -53,10 +61,11 @@ const Assessment = () => {
 
   // actions
   const handleNext = () => {
-    if (activeStep === stepsComponents.length - 1) {
-      handleAssessmentData();
+    if (activeStep === stepsLabel.length - 1) {
+      // handleAssessmentData();
+      console.log("finish");
     } else {
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      setActiveStep(activeStep + 1);
     }
   };
   const handleBack = () => {
@@ -118,80 +127,123 @@ const Assessment = () => {
   };
 
   // ang init ng steps
-  const stepsComponents = [
-    { label: disclaimerTitle, component: <Disclaimer /> },
+  const stepsComponents: IStepsComponents[] = [
     {
-      label: processNameTitle,
+      label: stepsLabel[0],
+      component: (
+        <Disclaimer
+          stepControls={{
+            activeStep: activeStep,
+            onBack: handleBack,
+            onNext: handleNext,
+            stepsComponentsLength: stepsLabel.length,
+          }}
+        />
+      ),
+    },
+    {
+      label: stepsLabel[1],
       component: (
         <ProcessName
           processName={processName}
           onChange={handleProcessName}
           assessmentVersion={currentAssessmentVersion}
+          stepControls={{
+            activeStep: activeStep,
+            onBack: handleBack,
+            onNext: handleNext,
+            stepsComponentsLength: stepsLabel.length,
+          }}
         />
       ),
     },
     {
-      label: processDescriptionTitle,
+      label: stepsLabel[2],
       component: (
-        <DataProcess initialData={dataProcess} onSubmit={handleDataProcess} />
+        <DataProcess
+          initialData={dataProcess}
+          onSubmit={handleDataProcess}
+          stepControls={{
+            activeStep: activeStep,
+            onBack: handleBack,
+            onNext: handleNext,
+            stepsComponentsLength: stepsLabel.length,
+          }}
+        />
       ),
     },
     {
-      label: riskAssessmentTitle,
+      label: stepsLabel[3],
       component: (
         <RiskAssessment
           onSubmit={handleRiskAssessments}
           riskAssessments={riskAssessments}
+          stepControls={{
+            activeStep: activeStep,
+            onBack: handleBack,
+            onNext: handleNext,
+            stepsComponentsLength: stepsLabel.length,
+          }}
         />
       ),
     },
     {
-      label: processDataFlowsTitle,
-      component: <ProcessDataFlow onChange={handleDataFlow} file={dataFlow} />,
+      label: stepsLabel[4],
+      component: (
+        <ProcessDataFlow
+          onChange={handleDataFlow}
+          file={dataFlow}
+          stepControls={{
+            activeStep: activeStep,
+            onBack: handleBack,
+            onNext: handleNext,
+            stepsComponentsLength: stepsLabel.length,
+          }}
+        />
+      ),
     },
     {
-      label: recommendedSolTitle,
+      label: stepsLabel[5],
       component: (
         <RecommendedSolutions
           onSubmit={handleRecommendedSolutions}
           recommendedSolutions={recommendedSolutions}
+          stepControls={{
+            activeStep: activeStep,
+            onBack: handleBack,
+            onNext: handleNext,
+            stepsComponentsLength: stepsLabel.length,
+          }}
         />
       ),
     },
   ];
 
   return (
-    <Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          background: mainContentPrimaryColor,
-          padding: "2vh",
-          minHeight: "73vh",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-        }}
-      >
-        <Stepper activeStep={activeStep} alternativeLabel>
-          {stepsComponents.map((step, index) => (
-            <Step key={index}>
-              <StepLabel>{step.label}</StepLabel>
-            </Step>
-          ))}
-        </Stepper>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        background: mainContentPrimaryColor,
+        padding: "2vh",
+        height: "83vh",
+        minHeight: "83vh",
+        alignItems: "center",
+        textAlign: "center",
+        overflow: "auto",
+      }}
+    >
+      <Stepper activeStep={activeStep} alternativeLabel>
+        {stepsComponents.map((step, index) => (
+          <Step key={index}>
+            <StepLabel>{step.label}</StepLabel>
+          </Step>
+        ))}
+      </Stepper>
 
-        <Box sx={{ marginTop: "4vh" }}>
-          {stepsComponents[activeStep].component}
-        </Box>
+      <Box sx={{ marginTop: "4vh" }}>
+        {stepsComponents[activeStep].component}
       </Box>
-      <ButtonStepsNavigator
-        activeStep={activeStep}
-        onNext={handleNext}
-        onBack={handleBack}
-        stepsComponentsLength={stepsComponents.length}
-      />
     </Box>
   );
 };

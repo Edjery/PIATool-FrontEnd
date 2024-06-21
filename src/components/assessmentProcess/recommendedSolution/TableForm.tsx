@@ -35,9 +35,13 @@ const formColumnHeaders = [
   tableColumnAction,
 ];
 
-const initialRecommendedPriorityOptions = [
-  { value: "1", text: "1", selected: false },
-];
+const generateOptions = (length: number) => {
+  return Array.from({ length }, (_, index) => ({
+    value: (index + 1).toString(),
+    text: (index + 1).toString(),
+    selected: false,
+  }));
+};
 
 interface Props {
   onSubmit: (riskAssessmentList: IRecommendedSolution[]) => void;
@@ -45,7 +49,8 @@ interface Props {
 }
 
 const TableForm = ({ onSubmit, formInitialValues }: Props) => {
-  const [options, setOptions] = useState(initialRecommendedPriorityOptions);
+  const initialOptions = generateOptions(formInitialValues.length);
+  const [options, setOptions] = useState(initialOptions);
 
   const handleAddOption = () => {
     const newOption = {

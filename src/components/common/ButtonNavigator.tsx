@@ -1,5 +1,4 @@
 import { Box, Button } from "@mui/material";
-import { mainContentPrimaryColor } from "../../values/colors";
 import { btnBack, btnFinish, btnNext } from "../../values/string";
 
 interface Props {
@@ -23,9 +22,8 @@ const ButtonStepsNavigator = ({
         flexDirection: "row",
         justifyContent: "space-between",
         alignContent: "end",
-        px: "5vh",
-        pb: "5vh",
-        background: mainContentPrimaryColor,
+        px: "1vh",
+        py: "2vh",
       }}
     >
       <Button variant="contained" disabled={activeStep === 0} onClick={onBack}>

@@ -1,6 +1,8 @@
+import { useState } from "react";
+import ButtonStepsNavigator from "../common/ButtonNavigator";
 import CardContainer from "../common/CardContainer";
-import initialRecommendationSolutionValues from "./initialValues/initialRecommendationSolutionValues";
 import IRecommendedSolution from "./interface/IRecommendedSolution";
+import IStepControls from "./interface/IStepControls";
 import Header from "./recommendedSolution/Header";
 import TableCalculations from "./recommendedSolution/TableCalculations";
 import TableForm from "./recommendedSolution/TableForm";
@@ -8,17 +10,36 @@ import TableForm from "./recommendedSolution/TableForm";
 interface Props {
   onSubmit: (recommendedSolutions: IRecommendedSolution[]) => void;
   recommendedSolutions: IRecommendedSolution[];
+  stepControls: IStepControls;
 }
 
-const RecommendedSolutions = ({ onSubmit, recommendedSolutions }: Props) => {
+const RecommendedSolutions = ({
+  onSubmit,
+  recommendedSolutions,
+  stepControls,
+}: Props) => {
+  const [currentSolutions, setSolutions] = useState(recommendedSolutions);
+  const handleSubmit = (riskAssessmentList: IRecommendedSolution[]) => {
+    onSubmit(riskAssessmentList);
+    setSolutions(riskAssessmentList);
+  };
   return (
     <CardContainer variant="lg">
       <Header />
-      <TableForm
-        formInitialValues={initialRecommendationSolutionValues}
-        onSubmit={onSubmit}
+      <TableForm formInitialValues={currentSolutions} onSubmit={handleSubmit} />
+      <TableCalculations rowData={currentSolutions} />
+      <ButtonStepsNavigator
+        activeStep={stepControls.activeStep}
+        onNext={() => {
+          onSubmit(currentSolutions);
+          stepControls.onNext();
+        }}
+        onBack={() => {
+          onSubmit(currentSolutions);
+          stepControls.onBack();
+        }}
+        stepsComponentsLength={stepControls.stepsComponentsLength}
       />
-      <TableCalculations rowData={recommendedSolutions} />
     </CardContainer>
   );
 };

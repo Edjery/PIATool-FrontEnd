@@ -8,7 +8,9 @@ import {
   disclaimerTitle,
 } from "../../values/string";
 import { urlNpcPia } from "../../values/values";
+import ButtonStepsNavigator from "../common/ButtonNavigator";
 import CardContainer from "../common/CardContainer";
+import IStepControls from "./interface/IStepControls";
 
 const Paragraph = ({ paragraph }: { paragraph: string }) => (
   <Typography variant="body1" sx={{ mt: 2 }}>
@@ -16,7 +18,7 @@ const Paragraph = ({ paragraph }: { paragraph: string }) => (
   </Typography>
 );
 
-const Disclaimer = () => {
+const Disclaimer = ({ stepControls }: { stepControls: IStepControls }) => {
   return (
     <CardContainer variant="md">
       <Typography variant="h4" sx={{ fontWeight: "bold" }}>
@@ -33,6 +35,12 @@ const Disclaimer = () => {
         <Paragraph paragraph={disclaimerParagraphB} />
         <Paragraph paragraph={disclaimerParagraphC} />
       </Box>
+      <ButtonStepsNavigator
+        activeStep={stepControls.activeStep}
+        onNext={stepControls.onNext}
+        onBack={stepControls.onBack}
+        stepsComponentsLength={stepControls.stepsComponentsLength}
+      />
     </CardContainer>
   );
 };
