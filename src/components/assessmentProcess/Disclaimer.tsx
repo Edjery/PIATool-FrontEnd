@@ -11,6 +11,8 @@ import { urlNpcPia } from "../../values/values";
 import ButtonStepsNavigator from "../common/ButtonNavigator";
 import CardContainer from "../common/CardContainer";
 import IStepControls from "./interface/IStepControls";
+import ImageBox from "../common/ImageBox";
+import AlertIcon from "../../assets/icon/alert-triangle.svg";
 
 const Paragraph = ({ paragraph }: { paragraph: string }) => (
   <Typography variant="body1" sx={{ mt: 2 }}>
@@ -21,14 +23,17 @@ const Paragraph = ({ paragraph }: { paragraph: string }) => (
 const Disclaimer = ({ stepControls }: { stepControls: IStepControls }) => {
   return (
     <CardContainer variant="md">
-      <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-        {disclaimerTitle}
+      <Box textAlign={"center"}>
+        <ImageBox img={AlertIcon} height="15vh" />
+      </Box>
+      <Typography variant="h4">
+        <strong>{disclaimerTitle}</strong>
       </Typography>
-      <Box sx={{ textAlign: "justify", mt: 2 }}>
+      <Box textAlign={"justify"}>
         <Typography variant="body1">
           {disclaimerParagraphA1}{" "}
-          <Link href={urlNpcPia} target="_blank" sx={{ fontWeight: "bold" }}>
-            {disclaimerLinkPia}
+          <Link href={urlNpcPia} target="_blank">
+            <strong>{disclaimerLinkPia}</strong>
           </Link>{" "}
           {disclaimerParagraphA2}
         </Typography>
