@@ -39,19 +39,16 @@ const ProcessName = ({
 
   return (
     <CardContainer variant="md">
-      <Typography variant="h6" sx={{ fontWeight: "bold", padding: "3vh" }}>
-        {processNameDescription}
+      <Typography variant="h6" p="3vh">
+        <strong>{processNameDescription}</strong>
       </Typography>
       <Divider />
-      <Typography
-        variant="body1"
-        sx={{ fontWeight: "bold", textAlign: "left", padding: "2vh" }}
-      >
-        {processNameLabel}
+      <Typography variant="body1" textAlign="left" p="2vh">
+        <strong>{processNameLabel}</strong>
       </Typography>
       <FormControl
         variant="outlined"
-        sx={{ textAlign: "left", paddingX: "1vh" }}
+        sx={{ textAlign: "left", paddingX: "2vh" }}
       >
         <Select value={currentProcessName} onChange={handleChange} displayEmpty>
           {processNameList.map((process) => (
@@ -61,7 +58,7 @@ const ProcessName = ({
           ))}
         </Select>
       </FormControl>
-      <Box sx={{ marginY: "2vh", paddingX: "1vh" }}>
+      <Box my="2vh" px="1vh">
         <Typography>
           {assessmentVersionName} {assessmentVersion}
         </Typography>
