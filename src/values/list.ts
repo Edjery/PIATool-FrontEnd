@@ -16,13 +16,13 @@ import ITable from "./interface/ITable";
 import { assessmentVersion, collectionMethodLabel, dataCollectionTitle, dataDisclosureQuestion1, dataDisclosureQuestion2, dataDisclosureQuestion3, dataDisclosureQuestion4, dataDisclosureQuestion5, dataDisclosureTitle, dataSourceLabel, dataStorageDisposalQuestion1, dataStorageDisposalQuestion2, dataStorageDisposalQuestion3, dataStorageDisposalTitle, timingOfCollectionLabel } from "./string";
 
 export const userNavigationList: INavigationList[] = [
-  { name: "Home", icon: IconHome, url: "/home" },
+  { name: "Home", icon: IconHome, url: "/" },
   { name: "Reports", icon: IconReport, url: "/reports" },
   { name: "Logout", icon: IconLogout, url: "/logout" },
 ];
 
 export const adminNavigationList: INavigationList[] = [
-  { name: "Home", icon: IconHome, url: "/home" },
+  { name: "Dashboard", icon: IconHome, url: "/" },
   { name: "Reports", icon: IconReport, url: "/reports" },
   { name: "Threats", icon: IconWarning, url: "/threats" },
   { name: "Data Flow", icon: IconDataScheme, url: "/dataflow" },

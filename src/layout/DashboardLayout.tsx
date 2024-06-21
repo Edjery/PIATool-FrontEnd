@@ -1,11 +1,12 @@
 import { Box, Grid } from "@mui/material";
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import MainContent from "../components/MainContent";
 import SideBarPopUp from "../components/SideBarPopUp";
+import { mainContentPrimaryColor } from "../values/colors";
 
-const Home = () => {
+const DashboardLayout = () => {
   const [expanded, setExpanded] = useState(true);
 
   const toggleSideBar = () => {
@@ -25,7 +26,21 @@ const Home = () => {
             <Header toggleSideBar={toggleSideBar} expanded={expanded} />
           </Grid>
           <Grid item xs={12}>
-            <MainContent />
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                background: mainContentPrimaryColor,
+                padding: "2vh",
+                height: "83vh",
+                minHeight: "83vh",
+                alignItems: "center",
+                textAlign: "center",
+                overflow: "auto",
+              }}
+            >
+              <Outlet />
+            </Box>
           </Grid>
           <Grid item xs={12}>
             <Footer />
@@ -36,4 +51,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default DashboardLayout;

@@ -1,4 +1,4 @@
-import Assessment from "./assessmentProcess/Assessment";
+import Assessment from "./mainContent/Assessment";
 
 const MainContent = () => {
   return <Assessment />;

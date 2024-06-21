@@ -1,8 +1,13 @@
 import { Box, Button, Typography } from "@mui/material";
 import { btnStart, schoolName, websiteHeader } from "../../values/string";
-import HeaderUsepLogo from "./HeaderUsepLogo";
+import HeaderUsepLogo from "../homePage/HeaderUsepLogo";
+import { useNavigate } from "react-router-dom";
 
 const UserHomePage = () => {
+  const navigate = useNavigate();
+  const handleButton = () => {
+    navigate("/assessment");
+  };
   return (
     <Box
       sx={{
@@ -20,8 +25,12 @@ const UserHomePage = () => {
         <Typography variant="h4">{schoolName}</Typography>
         <Typography variant="h5">{websiteHeader}</Typography>
       </Box>
+
       <Box sx={{ marginTop: "3vh" }}>
-        <Button variant="contained">{btnStart}</Button>;
+        <Button variant="contained" onClick={handleButton}>
+          {btnStart}
+        </Button>
+        ;
       </Box>
     </Box>
   );

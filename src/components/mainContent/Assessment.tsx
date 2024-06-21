@@ -6,7 +6,6 @@ import {
   Stepper,
 } from "@mui/material";
 import { useState } from "react";
-import { mainContentPrimaryColor } from "../../values/colors";
 import {
   assessmentVersion,
   disclaimerTitle,
@@ -16,21 +15,21 @@ import {
   recommendedSolTitle,
   riskAssessmentTitle,
 } from "../../values/string";
-import DataProcess from "./DataProcess";
-import Disclaimer from "./Disclaimer";
-import initialAssessmentInputs from "./initialValues/initialAssessmentInputs";
-import IAssessmentInputs from "./interface/IAssessmentInputs";
-import IDataProcess from "./interface/IDataProcess";
-import IRecommendedSolution from "./interface/IRecommendedSolution";
-import IRiskAssessment from "./interface/IRiskAssessment";
-import IStepsComponents from "./interface/IStepsComponents";
-import ProcessDataFlow from "./ProcessDataFlow";
-import ProcessName from "./ProcessName";
-import RecommendedSolutions from "./RecommendedSolutions";
-import RiskAssessment from "./RiskAssessment";
-import dataProcessSchema from "./schema/dataProcessSchema";
-import recommendedSolutionSchema from "./schema/recommendedSolution";
-import riskAssessmentSchema from "./schema/riskAssessmentSchema";
+import DataProcess from "../assessmentProcess/DataProcess";
+import Disclaimer from "../assessmentProcess/Disclaimer";
+import initialAssessmentInputs from "../assessmentProcess/initialValues/initialAssessmentInputs";
+import IAssessmentInputs from "../assessmentProcess/interface/IAssessmentInputs";
+import IDataProcess from "../assessmentProcess/interface/IDataProcess";
+import IRecommendedSolution from "../assessmentProcess/interface/IRecommendedSolution";
+import IRiskAssessment from "../assessmentProcess/interface/IRiskAssessment";
+import IStepsComponents from "../assessmentProcess/interface/IStepsComponents";
+import ProcessDataFlow from "../assessmentProcess/ProcessDataFlow";
+import ProcessName from "../assessmentProcess/ProcessName";
+import RecommendedSolutions from "../assessmentProcess/RecommendedSolutions";
+import RiskAssessment from "../assessmentProcess/RiskAssessment";
+import dataProcessSchema from "../assessmentProcess/schema/dataProcessSchema";
+import recommendedSolutionSchema from "../assessmentProcess/schema/recommendedSolution";
+import riskAssessmentSchema from "../assessmentProcess/schema/riskAssessmentSchema";
 
 const currentAssessmentVersion = assessmentVersion;
 const stepsLabel = [
@@ -62,7 +61,7 @@ const Assessment = () => {
   // actions
   const handleNext = () => {
     if (activeStep === stepsLabel.length - 1) {
-      // handleAssessmentData();
+      handleAssessmentData();
       console.log("finish");
     } else {
       setActiveStep(activeStep + 1);
@@ -224,13 +223,9 @@ const Assessment = () => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        background: mainContentPrimaryColor,
-        padding: "2vh",
-        height: "83vh",
-        minHeight: "83vh",
         alignItems: "center",
+        justifyContent: "center",
         textAlign: "center",
-        overflow: "auto",
       }}
     >
       <Stepper activeStep={activeStep} alternativeLabel>
