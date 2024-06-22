@@ -1,6 +1,6 @@
 interface IRiskAssessment {
     id: number;
-    riskName: string;
+    name: string;
     impactRating: string;
     probabilityRating: string;
 };

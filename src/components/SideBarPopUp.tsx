@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import SetNavigationListByRoleId from "../helper/SetNavigationListByRoleId";
+import setNavigationListByRoleId from "../helper/setNavigationListByRoleId";
 import { sideBarPrimaryColor, sideBarPrimaryTextColor } from "../values/colors";
 import { UsepLogo } from "../values/icons";
 import INavigationList from "../values/interface/INavigationList";
@@ -14,7 +14,7 @@ interface Props {
 const SideBarPopUp = ({ isExpanded }: Props) => {
   const currentRoleId: number = 2;
   const currentList: INavigationList[] =
-    SetNavigationListByRoleId(currentRoleId);
+    setNavigationListByRoleId(currentRoleId);
 
   return (
     <Box

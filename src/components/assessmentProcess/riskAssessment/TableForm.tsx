@@ -73,7 +73,7 @@ const TableForm = ({ onSubmit, formInitialValues }: Props) => {
                     {({ push, remove }) => (
                       <TableBody>
                         {values.riskAssessments.map((risk, index) => {
-                          const riskName = `riskAssessments[${index}].riskName`;
+                          const riskName = `riskAssessments[${index}].name`; // #TODO I can just pull the key of the interface
                           const touchedRiskName = getIn(touched, riskName);
                           const errorRiskName = getIn(errors, riskName);
 
@@ -99,7 +99,7 @@ const TableForm = ({ onSubmit, formInitialValues }: Props) => {
                                 <TextField
                                   variant="outlined"
                                   name={riskName}
-                                  value={risk.riskName}
+                                  value={risk.name}
                                   required
                                   helperText={
                                     touchedRiskName && errorRiskName

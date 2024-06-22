@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { mainHeaderPrimaryColor } from "../values/colors";
+import { copyrightA, copyrightB, rightsReserved } from "../values/string";
 
 const Footer = () => {
   return (
@@ -11,7 +12,10 @@ const Footer = () => {
       }}
     >
       <Typography variant="body1" align="center">
-        <strong>Copyright &copy; 2023 USeP PIA.</strong> All rights reserved.
+        <strong>
+          {copyrightA} &copy; {copyrightB}
+        </strong>{" "}
+        {rightsReserved}
       </Typography>
     </Box>
   );

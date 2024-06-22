@@ -1,5 +1,5 @@
 import MenuIcon from "@mui/icons-material/Menu";
-import usepLogo from "../assets/logo/usep_logo.png";
+import usepLogo from "../assets/images/logo/usep_logo.png";
 import CustomIcon from "../components/common/CustomIcon";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import StickyNote2OutlinedIcon from "@mui/icons-material/StickyNote2Outlined";

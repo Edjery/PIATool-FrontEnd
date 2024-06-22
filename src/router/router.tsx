@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import AssessmentDocument from "../components/document/AssessmentDoc";
+import sampleAssessmentInputs from "../components/assessmentProcess/initialValues/sampleAssessmentInputs";
+import AssessmentDocument from "../components/document/AssessmentDocument";
 import Assessment from "../components/mainContent/Assessment";
 import UserHomePage from "../components/mainContent/UserHomePage";
 import ErrorPage from "../components/pages/ErrorPage";
@@ -21,7 +22,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/assessment/view",
-        element: <AssessmentDocument />,
+        element: (
+          <AssessmentDocument AssessmentInputs={sampleAssessmentInputs} />
+        ),
       },
     ],
   },

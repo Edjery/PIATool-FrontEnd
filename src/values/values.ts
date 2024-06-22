@@ -8,3 +8,7 @@ export const imgPreferredMbSize = 10;
 export const imgMaxFileSize = imgPreferredMbSize * 1024 * 1024;
 export const imgTypeError = "Invalid file format. Please upload a PNG or JPG image."
 export const imgSizeError = `File size exceeds ${imgPreferredMbSize}MB. Please upload a smaller image.`
+
+// document
+export const paperSizeA4 = "A4";
+// paperSizeA4

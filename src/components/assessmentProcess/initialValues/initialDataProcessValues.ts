@@ -9,6 +9,7 @@ const initialDataProcessValues: IDataProcess = {
     processingPurpose: "",
     securityMeasure: "",
     dataProcessing: [],
+    processNarrative: "",
 };
 
 dataProcessingQuestions.forEach((section, sectionIndex) => {
@@ -16,7 +17,6 @@ dataProcessingQuestions.forEach((section, sectionIndex) => {
 
     section.questions.forEach((_question, questionIndex) => {
         entries.push({
-            version: section.version,
             sectionId: sectionIndex,
             questionId: questionIndex,
             answer: "",

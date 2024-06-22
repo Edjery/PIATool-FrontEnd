@@ -1,4 +1,5 @@
 import { Box, Link, Typography } from "@mui/material";
+import { urlAlertIcon } from "../../values/images";
 import {
   disclaimerLinkPia,
   disclaimerParagraphA1,
@@ -10,9 +11,8 @@ import {
 import { urlNpcPia } from "../../values/values";
 import ButtonStepsNavigator from "../common/ButtonNavigator";
 import CardContainer from "../common/CardContainer";
-import IStepControls from "./interface/IStepControls";
 import ImageBox from "../common/ImageBox";
-import AlertIcon from "../../assets/icon/alert-triangle.svg";
+import IStepControls from "./interface/IStepControls";
 
 const Paragraph = ({ paragraph }: { paragraph: string }) => (
   <Typography variant="body1" sx={{ mt: 2 }}>
@@ -24,7 +24,7 @@ const Disclaimer = ({ stepControls }: { stepControls: IStepControls }) => {
   return (
     <CardContainer variant="md">
       <Box textAlign={"center"}>
-        <ImageBox img={AlertIcon} height="15vh" />
+        <ImageBox img={urlAlertIcon} height="15vh" />
       </Box>
       <Typography variant="h4">
         <strong>{disclaimerTitle}</strong>

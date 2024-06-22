@@ -6,6 +6,7 @@ interface IDataProcess {
     dataField: string[];
     processingPurpose: string;
     securityMeasure: string;
+    processNarrative: string;
     dataProcessing: IDataProcessingEntry[][]
 }
 export default IDataProcess

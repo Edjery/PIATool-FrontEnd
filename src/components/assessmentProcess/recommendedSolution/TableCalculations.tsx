@@ -7,13 +7,8 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import {
-  recommendedSolColumnA,
-  recommendedSolColumnB,
-} from "../../../values/string";
+import { recommendedSolutionColumnHeaders } from "../../../values/list";
 import IRecommendedSolution from "../interface/IRecommendedSolution";
-
-const dataColumnHeaders = [recommendedSolColumnA, recommendedSolColumnB];
 
 interface Props {
   rowData: IRecommendedSolution[];
@@ -28,7 +23,7 @@ const TableCalculations = ({ rowData }: Props) => {
           <Table sx={{ tableLayout: "auto" }}>
             <TableHead>
               <TableRow>
-                {dataColumnHeaders.map((header, index) => (
+                {recommendedSolutionColumnHeaders.map((header, index) => (
                   <TableCell
                     key={index}
                     sx={{ fontSize: "3vh", fontWeight: "bold" }}

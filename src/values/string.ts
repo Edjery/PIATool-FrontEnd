@@ -17,7 +17,7 @@ export const processNameDescription = "Select the process name of this Privacy I
 export const processNameTitle = "Process Name"
 export const processNameLabel = `${processNameTitle}: `
 
-export const assessmentVersionName = "Assessment Version: "
+export const assessmentVersionLabel = "Assessment Version: "
 export const assessmentVersion = "1.0.0"
 
 export const processDescriptionTitle = "Process Description"
@@ -37,6 +37,7 @@ export const dataPurposeHint = "This is the purpose for collecting the data."
 export const dataSecurityName = "securityMeasure"
 export const dataSecurityLabel = "Security Measure: "
 export const dataSecurityHint = "This is how the collected data is secured."
+export const processNarrativeName = "processNarrative"
 export const processNarrativeLabel = "Process Narrative: "
 export const processNarrativeHint = "This is a concise description of the steps involved in how the data is collected."
 export const processLevelAnalysisTitle = "Process-Level Analysis: Data Lifecycle"
@@ -110,3 +111,17 @@ export const linkDiagram = "diagrams.net"
 
 export const errorHeader = "Oops!"
 export const errorSubHeader = "Sorry, an unexpected error has occurred."
+
+export const copyrightA = "Copyright"
+export const copyrightB = "2023 USeP PIA."
+export const copyrightIcon = "&copy;"
+export const rightsReserved = "All rights reserved."
+
+export const stampHeader = "OLA-UDPO VALIDATED"
+export const stampDateLabel = "Date Validated: "
+export const stampSampleDate = "July 24, 2023"
+
+export const assessmentDocumentTitle = "Privacy Impact Assessment Report"
+export const uagcName = "University Assessment and Guidance Center"
+export const preparedBy = "Prepared by:"
+export const sampleName = "Reyjet R. Sandoval"

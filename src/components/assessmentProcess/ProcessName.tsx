@@ -10,7 +10,7 @@ import {
 import { useState } from "react";
 import { processNameList } from "../../values/list";
 import {
-  assessmentVersionName,
+  assessmentVersionLabel,
   processNameDescription,
   processNameLabel,
 } from "../../values/string";
@@ -60,7 +60,7 @@ const ProcessName = ({
       </FormControl>
       <Box my="2vh" px="1vh">
         <Typography>
-          {assessmentVersionName} {assessmentVersion}
+          {assessmentVersionLabel} {assessmentVersion}
         </Typography>
       </Box>
       <ButtonStepsNavigator

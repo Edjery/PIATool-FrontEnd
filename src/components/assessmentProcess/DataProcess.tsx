@@ -34,6 +34,9 @@ import {
   processDescriptionTitle,
   processLevelAnalysisDescription,
   processLevelAnalysisTitle,
+  processNarrativeHint,
+  processNarrativeLabel,
+  processNarrativeName,
   processTitle,
 } from "../../values/string";
 import ButtonStepsNavigator from "../common/ButtonNavigator";
@@ -150,7 +153,7 @@ const DataProcess = ({ initialData, onSubmit, stepControls }: Props) => {
                 </FieldArray>
 
                 <FormTextAreaField
-                  title={dataPurposeHint}
+                  hint={dataPurposeHint}
                   label={dataPurposeLabel}
                   name={dataPurposeName}
                   values={values.processingPurpose}
@@ -165,13 +168,27 @@ const DataProcess = ({ initialData, onSubmit, stepControls }: Props) => {
                   handleBlur={handleBlur}
                 />
                 <FormTextAreaField
-                  title={dataSecurityHint}
+                  hint={dataSecurityHint}
                   label={dataSecurityLabel}
                   name={dataSecurityName}
                   values={values.securityMeasure}
                   helperText={touched.securityMeasure && errors.securityMeasure}
                   error={
                     touched.securityMeasure && Boolean(errors.securityMeasure)
+                  }
+                  handleChange={handleChange}
+                  handleBlur={handleBlur}
+                />
+                <FormTextAreaField
+                  hint={processNarrativeHint}
+                  label={processNarrativeLabel}
+                  name={processNarrativeName}
+                  values={values.processNarrative}
+                  helperText={
+                    touched.processNarrative && errors.processNarrative
+                  }
+                  error={
+                    touched.processNarrative && Boolean(errors.processNarrative)
                   }
                   handleChange={handleChange}
                   handleBlur={handleBlur}
@@ -196,7 +213,7 @@ const DataProcess = ({ initialData, onSubmit, stepControls }: Props) => {
 
                     return (
                       <FormTextAreaField
-                        title={""}
+                        hint={""}
                         label={question}
                         key={questionIndex}
                         name={currentName}
@@ -218,6 +235,7 @@ const DataProcess = ({ initialData, onSubmit, stepControls }: Props) => {
                 color="success"
                 onClick={() => {
                   onSubmit(values);
+                  console.log(values);
                   values.dataField.length === 0
                     ? console.log("Please add at least one data field") // #TODO add alert
                     : null;

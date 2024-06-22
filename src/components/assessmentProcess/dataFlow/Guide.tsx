@@ -6,8 +6,7 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import legendFlowChart from "../../../assets/sampleFigures/FlowChartLegend.png";
-import sampleFlowChart from "../../../assets/sampleFigures/SampleFlowChart.png";
+import { urlLegendFlowChart, urlSampleFlowChart } from "../../../values/images";
 import {
   btnToggleGuide,
   processDataColumnA,
@@ -54,10 +53,10 @@ const Guide = () => {
           <TableBody>
             <TableRow>
               <TableCell sx={dataFlowGuideStyles.tableBodyCell}>
-                <ImageBox img={sampleFlowChart} height="50vh" />
+                <ImageBox img={urlSampleFlowChart} height="50vh" />
               </TableCell>
               <TableCell sx={dataFlowGuideStyles.tableBodyCell}>
-                <ImageBox img={legendFlowChart} height="50vh" />
+                <ImageBox img={urlLegendFlowChart} height="50vh" />
               </TableCell>
             </TableRow>
           </TableBody>

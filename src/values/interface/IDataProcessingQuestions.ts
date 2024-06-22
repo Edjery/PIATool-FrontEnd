@@ -1,5 +1,4 @@
 interface IDataProcessingQuestions {
-    version: string;
     title: string;
     questions: string[];
 }

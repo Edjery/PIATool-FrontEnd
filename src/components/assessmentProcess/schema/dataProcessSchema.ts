@@ -6,6 +6,7 @@ const dataProcessSchema = Yup.object().shape({
     dataField: Yup.array().of(Yup.string()).min(1, 'At least one Data Field is required'),
     processingPurpose: Yup.string().required('Processing Purpose is required'),
     securityMeasure: Yup.string().required('Security Measure is required'),
+    processNarrative: Yup.string().required('Process Narrative is required'),
     dataProcessing: Yup.array().of(
         Yup.array().of(
             Yup.object().shape({

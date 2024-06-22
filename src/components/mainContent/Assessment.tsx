@@ -30,6 +30,7 @@ import RiskAssessment from "../assessmentProcess/RiskAssessment";
 import dataProcessSchema from "../assessmentProcess/schema/dataProcessSchema";
 import recommendedSolutionSchema from "../assessmentProcess/schema/recommendedSolution";
 import riskAssessmentSchema from "../assessmentProcess/schema/riskAssessmentSchema";
+import { useNavigate } from "react-router-dom";
 
 const currentAssessmentVersion = assessmentVersion;
 const stepsLabel = [
@@ -57,12 +58,13 @@ const Assessment = () => {
   const [recommendedSolutions, setRecommendedSolutions] = useState(
     initialAssessmentInputs.recommendedSolutions
   );
+  const naviate = useNavigate();
 
   // actions
   const handleNext = () => {
     if (activeStep === stepsLabel.length - 1) {
+      naviate("/assessment/view");
       handleAssessmentData();
-      console.log("finish");
     } else {
       setActiveStep(activeStep + 1);
     }

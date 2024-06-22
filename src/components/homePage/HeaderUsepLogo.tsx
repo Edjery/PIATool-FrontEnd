@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
-import usepLogo from "../../assets/logo/usep_logo.png";
+import { urlUsepLogo } from "../../values/images";
 
 const HeaderUsepLogo = () => {
   return (
     <Box
       component="img"
-      src={usepLogo}
+      src={urlUsepLogo}
       sx={{
         height: "35vh",
         padding: "5px",

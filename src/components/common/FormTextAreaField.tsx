@@ -3,7 +3,7 @@ import { ChangeEvent } from "react";
 import { usepDarkPrimaryColor, usepPrimaryColor } from "../../values/colors";
 
 interface Props {
-  title: string;
+  hint: string;
   label: string;
   name: string;
   values: string | undefined;
@@ -22,7 +22,7 @@ interface Props {
 }
 
 const FormTextAreaField = ({
-  title,
+  hint,
   label,
   name,
   values,
@@ -61,7 +61,7 @@ const FormTextAreaField = ({
           },
         }}
       >
-        <Tooltip title={title}>
+        <Tooltip title={hint}>
           <TextField
             label={label}
             margin="normal"

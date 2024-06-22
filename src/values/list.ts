@@ -8,12 +8,13 @@ import {
   IconWarning,
 } from "./icons";
 import IDataProcessingQuestions from "./interface/IDataProcessingQuestions";
+import IDataQuestionSet from "./interface/IDataQuestionSets";
 import INavigationList from "./interface/INavigationList";
 import IProcessName from "./interface/IProcessName";
 import IRiskRatingMap from "./interface/IRiskRatingMap";
 import ISelectOption from "./interface/ISelectOption";
 import ITable from "./interface/ITable";
-import { assessmentVersion, collectionMethodLabel, dataCollectionTitle, dataDisclosureQuestion1, dataDisclosureQuestion2, dataDisclosureQuestion3, dataDisclosureQuestion4, dataDisclosureQuestion5, dataDisclosureTitle, dataSourceLabel, dataStorageDisposalQuestion1, dataStorageDisposalQuestion2, dataStorageDisposalQuestion3, dataStorageDisposalTitle, timingOfCollectionLabel } from "./string";
+import { assessmentVersion, collectionMethodLabel, dataCollectionTitle, dataDisclosureQuestion1, dataDisclosureQuestion2, dataDisclosureQuestion3, dataDisclosureQuestion4, dataDisclosureQuestion5, dataDisclosureTitle, dataSourceLabel, dataStorageDisposalQuestion1, dataStorageDisposalQuestion2, dataStorageDisposalQuestion3, dataStorageDisposalTitle, recommendedSolColumnA, recommendedSolColumnB, riskAssessmentColumn1, riskAssessmentColumn2, riskAssessmentColumn3, riskAssessmentColumn4, timingOfCollectionLabel } from "./string";
 
 export const userNavigationList: INavigationList[] = [
   { name: "Home", icon: IconHome, url: "/" },
@@ -64,7 +65,6 @@ export const processNameList: IProcessName[] = [
 
 export const dataProcessingQuestions: IDataProcessingQuestions[] = [
   {
-    version: assessmentVersion,
     title: dataCollectionTitle,
     questions: [
       dataSourceLabel,
@@ -73,7 +73,6 @@ export const dataProcessingQuestions: IDataProcessingQuestions[] = [
     ],
   },
   {
-    version: assessmentVersion,
     title: dataDisclosureTitle,
     questions: [
       dataDisclosureQuestion1,
@@ -84,7 +83,6 @@ export const dataProcessingQuestions: IDataProcessingQuestions[] = [
     ],
   },
   {
-    version: assessmentVersion,
     title: dataStorageDisposalTitle,
     questions: [
       dataStorageDisposalQuestion1,
@@ -93,6 +91,13 @@ export const dataProcessingQuestions: IDataProcessingQuestions[] = [
     ],
   },
 ];
+
+export const questionSetA: IDataQuestionSet = {
+  version: assessmentVersion,
+  questionSet: dataProcessingQuestions,
+}
+
+export const questionSets: IDataQuestionSet[] = [questionSetA]
 
 export const riskRatingMapList: IRiskRatingMap[] = [
   { rating: "1", description: "Negligible", color: "#fafdff" },
@@ -142,3 +147,12 @@ export const probabilityGuideTable: ITable = {
     ["4", "Almost", "Very likely. It is expected to occur in most circumstances."],
   ]
 }
+
+export const riskAssessmentColumnHeaders = [
+  riskAssessmentColumn1,
+  riskAssessmentColumn2,
+  riskAssessmentColumn3,
+  riskAssessmentColumn4,
+];
+
+export const recommendedSolutionColumnHeaders = [recommendedSolColumnA, recommendedSolColumnB];

@@ -3,7 +3,7 @@ import IRiskAssessment from "../interface/IRiskAssessment";
 const initialRiskAssessmentValues: IRiskAssessment[] = [
     {
         id: Math.random(),
-        riskName: "",
+        name: "",
         impactRating: "",
         probabilityRating: "",
     },
