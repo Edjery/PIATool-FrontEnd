@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import setNavigationListByRoleId from "../helper/setNavigationListByRoleId";
+import setNavigationListByRoleId from "../helper/asetNavigationListByRoleId";
 import { sideBarPrimaryColor, sideBarPrimaryTextColor } from "../values/colors";
 import { UsepLogo } from "../values/icons";
 import INavigationList from "../values/interface/INavigationList";
