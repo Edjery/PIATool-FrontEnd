@@ -11,4 +11,6 @@ export const imgSizeError = `File size exceeds ${imgPreferredMbSize}MB. Please u
 
 // document
 export const paperSizeA4 = "A4";
-// paperSizeA4
+
+// process
+export const bypassAssessmentValidation = false;

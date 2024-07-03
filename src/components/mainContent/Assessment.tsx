@@ -6,17 +6,25 @@ import {
   Stepper,
 } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { processNameList } from "../../values/list";
 import {
   assessmentVersion,
   disclaimerTitle,
+  finalStep,
   processDataFlowsTitle,
   processDescriptionTitle,
   processNameTitle,
   recommendedSolTitle,
   riskAssessmentTitle,
+  sampleName,
+  stampSampleDate,
+  uagcName,
 } from "../../values/string";
+import { bypassAssessmentValidation } from "../../values/values";
 import DataProcess from "../assessmentProcess/DataProcess";
 import Disclaimer from "../assessmentProcess/Disclaimer";
+import FinalProcess from "../assessmentProcess/FinalProcess";
 import initialAssessmentInputs from "../assessmentProcess/initialValues/initialAssessmentInputs";
 import IAssessmentInputs from "../assessmentProcess/interface/IAssessmentInputs";
 import IDataProcess from "../assessmentProcess/interface/IDataProcess";
@@ -30,7 +38,7 @@ import RiskAssessment from "../assessmentProcess/RiskAssessment";
 import dataProcessSchema from "../assessmentProcess/schema/dataProcessSchema";
 import recommendedSolutionSchema from "../assessmentProcess/schema/recommendedSolution";
 import riskAssessmentSchema from "../assessmentProcess/schema/riskAssessmentSchema";
-import { useNavigate } from "react-router-dom";
+import IAssessmentReportDetails from "../document/interface/IAssessmentReportDetails";
 
 const currentAssessmentVersion = assessmentVersion;
 const stepsLabel = [
@@ -40,12 +48,14 @@ const stepsLabel = [
   riskAssessmentTitle,
   processDataFlowsTitle,
   recommendedSolTitle,
+  finalStep,
 ];
 
 const Assessment = () => {
   // init
+  const navigate = useNavigate();
   const [activeStep, setActiveStep] = useState(0);
-  const [processName, setProcessName] = useState(
+  const [processName, setProcessName] = useState<string>(
     initialAssessmentInputs.processName
   );
   const [dataProcess, setDataProcess] = useState(
@@ -58,13 +68,34 @@ const Assessment = () => {
   const [recommendedSolutions, setRecommendedSolutions] = useState(
     initialAssessmentInputs.recommendedSolutions
   );
-  const naviate = useNavigate();
+  const [overallAssessmentInputs, setOverallAssessmentInputs] =
+    useState<IAssessmentInputs>({
+      processName: processName,
+      piaVersion: currentAssessmentVersion,
+      dataProcess: dataProcess,
+      riskAssessments: riskAssessments,
+      dataFlow: dataFlow,
+      recommendedSolutions: recommendedSolutions,
+    });
+
+  // backend update needed: get this data from current user, user department, validations from db if exist and current version
+  const reportDetails: IAssessmentReportDetails = {
+    author: sampleName,
+    department: uagcName,
+    validated: false,
+    dateValidated: stampSampleDate,
+    version: assessmentVersion,
+  };
 
   // actions
   const handleNext = () => {
-    if (activeStep === stepsLabel.length - 1) {
-      naviate("/assessment/view");
-      handleAssessmentData();
+    if (activeStep === stepsLabel.length - 2) {
+      if (validateAssessmentData() || bypassAssessmentValidation) {
+        handleAssessmentData();
+        setActiveStep(activeStep + 1);
+      }
+    } else if (activeStep === stepsLabel.length - 1) {
+      navigate("/");
     } else {
       setActiveStep(activeStep + 1);
     }
@@ -114,17 +145,15 @@ const Assessment = () => {
     return valid;
   };
   const handleAssessmentData = () => {
-    if (validateAssessmentData()) {
-      const overallAssessmentInputs: IAssessmentInputs = {
-        processName: processName,
-        piaVersion: currentAssessmentVersion,
-        dataProcess: dataProcess,
-        riskAssessments: riskAssessments,
-        dataFlow: dataFlow,
-        recommendedSolutions: recommendedSolutions,
-      };
-      console.log(overallAssessmentInputs);
-    }
+    const overallAssessmentInputs: IAssessmentInputs = {
+      processName: processNameList[parseInt(processName)].name,
+      piaVersion: currentAssessmentVersion,
+      dataProcess: dataProcess,
+      riskAssessments: riskAssessments,
+      dataFlow: dataFlow,
+      recommendedSolutions: recommendedSolutions,
+    };
+    setOverallAssessmentInputs(overallAssessmentInputs);
   };
 
   // ang init ng steps
@@ -209,6 +238,21 @@ const Assessment = () => {
         <RecommendedSolutions
           onSubmit={handleRecommendedSolutions}
           recommendedSolutions={recommendedSolutions}
+          stepControls={{
+            activeStep: activeStep,
+            onBack: handleBack,
+            onNext: handleNext,
+            stepsComponentsLength: stepsLabel.length,
+          }}
+        />
+      ),
+    },
+    {
+      label: stepsLabel[6],
+      component: (
+        <FinalProcess
+          assessmentInputs={overallAssessmentInputs}
+          reportDetails={reportDetails}
           stepControls={{
             activeStep: activeStep,
             onBack: handleBack,

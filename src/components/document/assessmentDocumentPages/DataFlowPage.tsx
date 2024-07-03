@@ -1,6 +1,5 @@
 import { Image, Text, View } from "@react-pdf/renderer";
-import { urlSampleFlowChart } from "../../../values/images";
-import { processDataFlowsTitle } from "../../../values/string";
+import { noImageFound, processDataFlowsTitle } from "../../../values/string";
 import CommonPage from "../common/CommonPage";
 import documentStyle from "../styles/documentStyle";
 
@@ -19,7 +18,7 @@ const DataFlowPage = ({ DataFlow }: Props) => {
             style={documentStyle.image}
           />
         ) : (
-          <Image src={urlSampleFlowChart} style={documentStyle.image} />
+          <Text style={[documentStyle.tableLabel]}>{noImageFound}</Text>
         )}
       </View>
     </CommonPage>

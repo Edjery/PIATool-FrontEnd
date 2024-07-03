@@ -106,7 +106,8 @@ const documentStyle = StyleSheet.create({
 
   // image
   image: {
-    width: "50vh", padding: "2vh"
+    width: "70vw",
+    padding: "2vh"
   },
 
   // common

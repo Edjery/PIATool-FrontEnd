@@ -6,7 +6,6 @@ import {
   stampDateLabel,
   stampHeader,
   stampSampleDate,
-  uagcName,
   websiteHeader,
 } from "../../../values/string";
 import { paperSizeA4 } from "../../../values/values";
@@ -18,7 +17,11 @@ interface Props {
 }
 
 const HomePage = ({ ReportDetails }: Props) => {
-  const homePageSubHeaderTexts = [uagcName, preparedBy, ReportDetails.author];
+  const homePageSubHeaderTexts = [
+    ReportDetails.department,
+    preparedBy,
+    ReportDetails.author,
+  ];
   return (
     <Page size={paperSizeA4}>
       {ReportDetails.validated && (

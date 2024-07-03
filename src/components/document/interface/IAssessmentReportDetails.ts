@@ -3,7 +3,6 @@ interface IAssessmentReportDetails {
     department: string;
     validated: boolean;
     dateValidated: string;
-    processName: string;
     version: string;
 }
 export default IAssessmentReportDetails

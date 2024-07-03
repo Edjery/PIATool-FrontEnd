@@ -87,6 +87,8 @@ export const recommendedSolInstruction = "In the same column, you have the optio
 export const recommendedSolColumnA = "Recommendation"
 export const recommendedSolColumnB = "Priority No."
 
+export const finalStep = "Review & Confirm"
+
 export const noteLabel = "Note: "
 export const notApplicableNote = "Put N/A if not applicable"
 export const tableColumnAction = "Action"
@@ -125,3 +127,4 @@ export const assessmentDocumentTitle = "Privacy Impact Assessment Report"
 export const uagcName = "University Assessment and Guidance Center"
 export const preparedBy = "Prepared by:"
 export const sampleName = "Reyjet R. Sandoval"
+export const noImageFound = "No Image Found"

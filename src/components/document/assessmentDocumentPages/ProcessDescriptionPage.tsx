@@ -13,15 +13,14 @@ import {
 } from "../../../values/string";
 import IDataProcess from "../../assessmentProcess/interface/IDataProcess";
 import CommonPage from "../common/CommonPage";
-import IAssessmentReportDetails from "../interface/IAssessmentReportDetails";
 import documentStyle from "../styles/documentStyle";
 
 interface Props {
-  ReportDetails: IAssessmentReportDetails;
   DataProcess: IDataProcess | null;
+  ProcessName: string;
 }
 
-const ProcessDescriptionPage = ({ ReportDetails, DataProcess }: Props) => {
+const ProcessDescriptionPage = ({ DataProcess, ProcessName }: Props) => {
   return (
     <CommonPage>
       <View style={documentStyle.centeredView}>
@@ -30,7 +29,7 @@ const ProcessDescriptionPage = ({ ReportDetails, DataProcess }: Props) => {
             <Text>{processNameLabel}</Text>
           </View>
           <View style={documentStyle.formValue}>
-            <Text>{ReportDetails.processName}</Text>
+            <Text>{ProcessName}</Text>
           </View>
         </View>
       </View>

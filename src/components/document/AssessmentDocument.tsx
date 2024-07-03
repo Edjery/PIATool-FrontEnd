@@ -1,35 +1,23 @@
 import { Document, PDFViewer } from "@react-pdf/renderer";
-import { processNameList } from "../../values/list";
-import {
-  assessmentDocumentTitle,
-  assessmentVersion,
-  sampleName,
-  stampSampleDate,
-} from "../../values/string";
+import { assessmentDocumentTitle } from "../../values/string";
 import IAssessmentInputs from "../assessmentProcess/interface/IAssessmentInputs";
+import DataFlowPage from "./assessmentDocumentPages/DataFlowPage";
 import DataPrivacyClearancePage from "./assessmentDocumentPages/DataPrivacyClearancePage";
 import HomePage from "./assessmentDocumentPages/HomePage";
 import ProcessAnalysisPage from "./assessmentDocumentPages/ProcessAnalysisPage";
 import ProcessDescriptionPage from "./assessmentDocumentPages/ProcessDescriptionPage";
+import RecommendationPage from "./assessmentDocumentPages/RecommendationPage";
+import RiskAssessmentPage from "./assessmentDocumentPages/RiskAssessmentPage";
 import IAssessmentReportDetails from "./interface/IAssessmentReportDetails";
 import documentStyle from "./styles/documentStyle";
-import RiskAssessmentPage from "./assessmentDocumentPages/RiskAssessmentPage";
-import DataFlowPage from "./assessmentDocumentPages/DataFlowPage";
-import RecommendationPage from "./assessmentDocumentPages/RecommendationPage";
 
 interface Props {
   AssessmentInputs: IAssessmentInputs;
+  ReportDetails: IAssessmentReportDetails;
 }
 
-const AssessmentDocument = ({ AssessmentInputs }: Props) => {
-  const ReportDetails: IAssessmentReportDetails = {
-    author: sampleName,
-    department: "",
-    validated: true,
-    dateValidated: stampSampleDate,
-    processName: processNameList[0].name,
-    version: assessmentVersion,
-  };
+const AssessmentDocument = ({ AssessmentInputs, ReportDetails }: Props) => {
+  const processName = AssessmentInputs.processName;
   const DataProcess = AssessmentInputs.dataProcess;
   const RiskAssessments = AssessmentInputs.riskAssessments;
   const DataFlow = AssessmentInputs.dataFlow;
@@ -40,7 +28,7 @@ const AssessmentDocument = ({ AssessmentInputs }: Props) => {
       <Document title={assessmentDocumentTitle} style={{ fontFamily: "Arial" }}>
         <HomePage ReportDetails={ReportDetails} />
         <ProcessDescriptionPage
-          ReportDetails={ReportDetails}
+          ProcessName={processName}
           DataProcess={DataProcess}
         />
         <ProcessAnalysisPage
