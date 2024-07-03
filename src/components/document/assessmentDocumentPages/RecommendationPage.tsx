@@ -2,7 +2,7 @@ import { TD, TH, TR, Table } from "@ag-media/react-pdf-table";
 import { Text, View } from "@react-pdf/renderer";
 import { recommendedSolutionColumnHeaders } from "../../../values/list";
 import { recommendedSolTitle } from "../../../values/string";
-import IRecommendedSolution from "../../assessmentProcess/interface/IRecommendedSolution";
+import IRecommendedSolution from "../../pageComponents/assessmentProcess/interface/IRecommendedSolution";
 import CommonPage from "../common/CommonPage";
 import documentStyle from "../styles/documentStyle";
 

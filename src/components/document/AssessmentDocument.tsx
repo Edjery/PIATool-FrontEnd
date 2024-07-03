@@ -1,6 +1,6 @@
 import { Document, PDFViewer } from "@react-pdf/renderer";
 import { assessmentDocumentTitle } from "../../values/string";
-import IAssessmentInputs from "../assessmentProcess/interface/IAssessmentInputs";
+import IAssessmentInputs from "../pageComponents/assessmentProcess/interface/IAssessmentInputs";
 import DataFlowPage from "./assessmentDocumentPages/DataFlowPage";
 import DataPrivacyClearancePage from "./assessmentDocumentPages/DataPrivacyClearancePage";
 import HomePage from "./assessmentDocumentPages/HomePage";

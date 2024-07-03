@@ -11,7 +11,7 @@ import {
   processNarrativeLabel,
   processTitle,
 } from "../../../values/string";
-import IDataProcess from "../../assessmentProcess/interface/IDataProcess";
+import IDataProcess from "../../pageComponents/assessmentProcess/interface/IDataProcess";
 import CommonPage from "../common/CommonPage";
 import documentStyle from "../styles/documentStyle";
 

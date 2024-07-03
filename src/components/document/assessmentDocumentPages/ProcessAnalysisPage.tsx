@@ -5,7 +5,7 @@ import CommonPage from "../common/CommonPage";
 import documentStyle from "../styles/documentStyle";
 import { questionSets } from "../../../values/list";
 import IAssessmentReportDetails from "../interface/IAssessmentReportDetails";
-import IDataProcess from "../../assessmentProcess/interface/IDataProcess";
+import IDataProcess from "../../pageComponents/assessmentProcess/interface/IDataProcess";
 
 interface Props {
   ReportDetails: IAssessmentReportDetails;

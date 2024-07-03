@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import Assessment from "../components/mainContent/Assessment";
-import UserHomePage from "../components/mainContent/UserHomePage";
+import Assessment from "../components/pages/Assessment";
+import UserHomePage from "../components/pages/UserHomePage";
 import ErrorPage from "../components/pages/ErrorPage";
 import DashboardLayout from "../layout/DashboardLayout";
 

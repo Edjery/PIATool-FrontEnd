@@ -5,7 +5,7 @@ import documentStyle from "../styles/documentStyle";
 import { Table, TD, TH, TR } from "@ag-media/react-pdf-table";
 import calculateRiskRating from "../../../helper/calculateRiskRating";
 import { riskAssessmentColumnHeaders } from "../../../values/list";
-import IRiskAssessment from "../../assessmentProcess/interface/IRiskAssessment";
+import IRiskAssessment from "../../pageComponents/assessmentProcess/interface/IRiskAssessment";
 
 interface Props {
   RiskAssessments: IRiskAssessment[];
