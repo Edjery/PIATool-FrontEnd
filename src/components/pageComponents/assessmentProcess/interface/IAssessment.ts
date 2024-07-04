@@ -1,8 +1,10 @@
+import IReportDetails from "./IReportDetails";
 import IDataProcess from "./IDataProcess";
 import IRecommendedSolution from "./IRecommendedSolution";
 import IRiskAssessment from "./IRiskAssessment";
 
-interface IAssessmentInputs {
+interface IAssessment {
+    reportDetails: IReportDetails
     processName: string | "";
     piaVersion: string | "";
     dataProcess: IDataProcess | null;
@@ -10,4 +12,4 @@ interface IAssessmentInputs {
     dataFlow: File | null;
     recommendedSolutions: IRecommendedSolution[];
 }
-export default IAssessmentInputs
+export default IAssessment

@@ -5,7 +5,7 @@ import {
   StepLabel,
   Stepper,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { processNameList } from "../../values/list";
 import {
@@ -24,12 +24,11 @@ import {
   stampSampleDate,
   uagcDepartmentName,
 } from "../../values/values";
-import IAssessmentReportDetails from "../document/interface/IAssessmentReportDetails";
 import DataProcess from "../pageComponents/assessmentProcess/DataProcess";
 import Disclaimer from "../pageComponents/assessmentProcess/Disclaimer";
 import FinalProcess from "../pageComponents/assessmentProcess/FinalProcess";
-import initialAssessmentInputs from "../pageComponents/assessmentProcess/initialValues/initialAssessmentInputs";
-import IAssessmentInputs from "../pageComponents/assessmentProcess/interface/IAssessmentInputs";
+import initialAssessment from "../pageComponents/assessmentProcess/initialValues/initialAssessment";
+import IAssessment from "../pageComponents/assessmentProcess/interface/IAssessment";
 import IDataProcess from "../pageComponents/assessmentProcess/interface/IDataProcess";
 import IRecommendedSolution from "../pageComponents/assessmentProcess/interface/IRecommendedSolution";
 import IRiskAssessment from "../pageComponents/assessmentProcess/interface/IRiskAssessment";
@@ -57,37 +56,44 @@ const Assessment = () => {
   // init
   const navigate = useNavigate();
   const [activeStep, setActiveStep] = useState(0);
-  const [processName, setProcessName] = useState<string>(
-    initialAssessmentInputs.processName
-  );
-  const [dataProcess, setDataProcess] = useState(
-    initialAssessmentInputs.dataProcess
-  );
-  const [riskAssessments, setRiskAssessments] = useState(
-    initialAssessmentInputs.riskAssessments
-  );
-  const [dataFlow, setDataFlow] = useState(initialAssessmentInputs.dataFlow);
-  const [recommendedSolutions, setRecommendedSolutions] = useState(
-    initialAssessmentInputs.recommendedSolutions
-  );
-  const [overallAssessmentInputs, setOverallAssessmentInputs] =
-    useState<IAssessmentInputs>({
-      processName: processName,
-      piaVersion: currentAssessmentVersion,
-      dataProcess: dataProcess,
-      riskAssessments: riskAssessments,
-      dataFlow: dataFlow,
-      recommendedSolutions: recommendedSolutions,
-    });
 
-  // backend update needed: get this data from current user, user department, validations from db if exist and current version
-  const reportDetails: IAssessmentReportDetails = {
-    author: sampleName,
-    department: uagcDepartmentName,
-    validated: false,
-    dateValidated: stampSampleDate,
-    version: assessmentVersion,
-  };
+  const [reportDetails, setReportDetails] = useState(
+    initialAssessment.reportDetails
+  );
+  const [processName, setProcessName] = useState<string>(
+    initialAssessment.processName
+  );
+  const [dataProcess, setDataProcess] = useState(initialAssessment.dataProcess);
+  const [riskAssessments, setRiskAssessments] = useState(
+    initialAssessment.riskAssessments
+  );
+  const [dataFlow, setDataFlow] = useState(initialAssessment.dataFlow);
+  const [recommendedSolutions, setRecommendedSolutions] = useState(
+    initialAssessment.recommendedSolutions
+  );
+
+  useEffect(() => {
+    // backend update needed: get this data from current user, user department, validations from db if exist and current version
+    const data = true;
+    if (data) {
+      setReportDetails({
+        author: sampleName,
+        department: uagcDepartmentName,
+        validated: false,
+        dateValidated: stampSampleDate,
+        version: assessmentVersion,
+      });
+    }
+  }, []);
+  const [overallAssessment, setOverallAssessment] = useState<IAssessment>({
+    reportDetails: reportDetails,
+    processName: processName,
+    piaVersion: currentAssessmentVersion,
+    dataProcess: dataProcess,
+    riskAssessments: riskAssessments,
+    dataFlow: dataFlow,
+    recommendedSolutions: recommendedSolutions,
+  });
 
   // actions
   const handleNext = () => {
@@ -145,15 +151,15 @@ const Assessment = () => {
     return valid;
   };
   const handleAssessmentData = () => {
-    const overallAssessmentInputs: IAssessmentInputs = {
+    setOverallAssessment({
+      reportDetails: reportDetails,
       processName: processNameList[parseInt(processName)].name,
       piaVersion: currentAssessmentVersion,
       dataProcess: dataProcess,
       riskAssessments: riskAssessments,
       dataFlow: dataFlow,
       recommendedSolutions: recommendedSolutions,
-    };
-    setOverallAssessmentInputs(overallAssessmentInputs);
+    });
   };
 
   // ang init ng steps
@@ -251,8 +257,7 @@ const Assessment = () => {
       label: stepsLabel[6],
       component: (
         <FinalProcess
-          assessmentInputs={overallAssessmentInputs}
-          reportDetails={reportDetails}
+          assessmentInputs={overallAssessment}
           stepControls={{
             activeStep: activeStep,
             onBack: handleBack,

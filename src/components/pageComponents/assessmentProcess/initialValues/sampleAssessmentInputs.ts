@@ -1,9 +1,17 @@
 import { processNameList } from "../../../../values/list";
 import { assessmentVersion } from "../../../../values/string";
-import IAssessmentInputs from "../interface/IAssessmentInputs";
+import { sampleName, uagcDepartmentName, stampSampleDate } from "../../../../values/values";
+import IAssessment from "../interface/IAssessment";
 
 
-const sampleAssessmentInputs: IAssessmentInputs = {
+const sampleAssessmentInputs: IAssessment = {
+    reportDetails: {
+        author: sampleName,
+        department: uagcDepartmentName,
+        validated: false,
+        dateValidated: stampSampleDate,
+        version: assessmentVersion,
+    },
     processName: processNameList[4].name.toString(),
     piaVersion: assessmentVersion,
     dataProcess: {

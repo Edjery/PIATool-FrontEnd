@@ -7,11 +7,11 @@ import {
   stampHeader,
   stampSampleDate,
 } from "../../../values/values";
-import IAssessmentReportDetails from "../interface/IAssessmentReportDetails";
+import IReportDetails from "../../pageComponents/assessmentProcess/interface/IReportDetails";
 import documentStyle from "../styles/documentStyle";
 
 interface Props {
-  ReportDetails: IAssessmentReportDetails;
+  ReportDetails: IReportDetails;
 }
 
 const HomePage = ({ ReportDetails }: Props) => {
@@ -40,8 +40,10 @@ const HomePage = ({ ReportDetails }: Props) => {
         </View>
 
         <View style={documentStyle.homePageSubHeader}>
-          {homePageSubHeaderTexts.map((text) => (
-            <Text style={documentStyle.homePageSubHeaderText}>{text}</Text>
+          {homePageSubHeaderTexts.map((text, index) => (
+            <Text key={index} style={documentStyle.homePageSubHeaderText}>
+              {text}
+            </Text>
           ))}
         </View>
       </View>

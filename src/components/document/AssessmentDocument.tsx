@@ -1,6 +1,6 @@
 import { Document, PDFViewer } from "@react-pdf/renderer";
 import { assessmentDocumentTitle } from "../../values/string";
-import IAssessmentInputs from "../pageComponents/assessmentProcess/interface/IAssessmentInputs";
+import IAssessment from "../pageComponents/assessmentProcess/interface/IAssessment";
 import DataFlowPage from "./assessmentDocumentPages/DataFlowPage";
 import DataPrivacyClearancePage from "./assessmentDocumentPages/DataPrivacyClearancePage";
 import HomePage from "./assessmentDocumentPages/HomePage";
@@ -8,16 +8,15 @@ import ProcessAnalysisPage from "./assessmentDocumentPages/ProcessAnalysisPage";
 import ProcessDescriptionPage from "./assessmentDocumentPages/ProcessDescriptionPage";
 import RecommendationPage from "./assessmentDocumentPages/RecommendationPage";
 import RiskAssessmentPage from "./assessmentDocumentPages/RiskAssessmentPage";
-import IAssessmentReportDetails from "./interface/IAssessmentReportDetails";
 import documentStyle from "./styles/documentStyle";
 
 interface Props {
-  AssessmentInputs: IAssessmentInputs;
-  ReportDetails: IAssessmentReportDetails;
+  AssessmentInputs: IAssessment;
 }
 
-const AssessmentDocument = ({ AssessmentInputs, ReportDetails }: Props) => {
-  const processName = AssessmentInputs.processName;
+const AssessmentDocument = ({ AssessmentInputs }: Props) => {
+  const ReportDetails = AssessmentInputs.reportDetails;
+  const ProcessName = AssessmentInputs.processName;
   const DataProcess = AssessmentInputs.dataProcess;
   const RiskAssessments = AssessmentInputs.riskAssessments;
   const DataFlow = AssessmentInputs.dataFlow;
@@ -28,11 +27,11 @@ const AssessmentDocument = ({ AssessmentInputs, ReportDetails }: Props) => {
       <Document title={assessmentDocumentTitle} style={{ fontFamily: "Arial" }}>
         <HomePage ReportDetails={ReportDetails} />
         <ProcessDescriptionPage
-          ProcessName={processName}
+          ProcessName={ProcessName}
           DataProcess={DataProcess}
         />
         <ProcessAnalysisPage
-          ReportDetails={ReportDetails}
+          Version={ReportDetails.version}
           DataProcess={DataProcess}
         />
         <RiskAssessmentPage RiskAssessments={RiskAssessments} />

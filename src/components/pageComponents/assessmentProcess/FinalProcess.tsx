@@ -1,27 +1,18 @@
 import ButtonStepsNavigator from "../../common/ButtonNavigator";
 import CardContainer from "../../common/CardContainer";
 import AssessmentDocument from "../../document/AssessmentDocument";
-import IAssessmentReportDetails from "../../document/interface/IAssessmentReportDetails";
-import IAssessmentInputs from "./interface/IAssessmentInputs";
+import IAssessment from "./interface/IAssessment";
 import IStepControls from "./interface/IStepControls";
 
 interface Props {
-  assessmentInputs: IAssessmentInputs;
+  assessmentInputs: IAssessment;
   stepControls: IStepControls;
-  reportDetails: IAssessmentReportDetails;
 }
 
-const FinalProcess = ({
-  assessmentInputs,
-  stepControls,
-  reportDetails,
-}: Props) => {
+const FinalProcess = ({ assessmentInputs, stepControls }: Props) => {
   return (
     <CardContainer variant="lg">
-      <AssessmentDocument
-        AssessmentInputs={assessmentInputs}
-        ReportDetails={reportDetails}
-      />
+      <AssessmentDocument AssessmentInputs={assessmentInputs} />
 
       <ButtonStepsNavigator
         activeStep={stepControls.activeStep}
