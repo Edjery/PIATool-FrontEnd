@@ -17,11 +17,13 @@ import {
   processNameTitle,
   recommendedSolTitle,
   riskAssessmentTitle,
+} from "../../values/string";
+import {
+  bypassAssessmentValidation,
   sampleName,
   stampSampleDate,
-  uagcName,
-} from "../../values/string";
-import { bypassAssessmentValidation } from "../../values/values";
+  uagcDepartmentName,
+} from "../../values/values";
 import IAssessmentReportDetails from "../document/interface/IAssessmentReportDetails";
 import DataProcess from "../pageComponents/assessmentProcess/DataProcess";
 import Disclaimer from "../pageComponents/assessmentProcess/Disclaimer";
@@ -81,7 +83,7 @@ const Assessment = () => {
   // backend update needed: get this data from current user, user department, validations from db if exist and current version
   const reportDetails: IAssessmentReportDetails = {
     author: sampleName,
-    department: uagcName,
+    department: uagcDepartmentName,
     validated: false,
     dateValidated: stampSampleDate,
     version: assessmentVersion,

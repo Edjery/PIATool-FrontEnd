@@ -1,7 +1,8 @@
 import { Image, Text, View } from "@react-pdf/renderer";
-import { noImageFound, processDataFlowsTitle } from "../../../values/string";
+import { processDataFlowsTitle } from "../../../values/string";
 import CommonPage from "../common/CommonPage";
 import documentStyle from "../styles/documentStyle";
+import { image404ErrorMsg } from "../../../values/values";
 
 interface Props {
   DataFlow: File | null;
@@ -18,7 +19,7 @@ const DataFlowPage = ({ DataFlow }: Props) => {
             style={documentStyle.image}
           />
         ) : (
-          <Text style={[documentStyle.tableLabel]}>{noImageFound}</Text>
+          <Text style={[documentStyle.tableLabel]}>{image404ErrorMsg}</Text>
         )}
       </View>
     </CommonPage>

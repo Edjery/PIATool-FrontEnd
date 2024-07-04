@@ -111,20 +111,10 @@ export const btnSubmit = "Submit"
 export const btnOrder = "Order"
 export const linkDiagram = "diagrams.net"
 
-export const errorHeader = "Oops!"
-export const errorSubHeader = "Sorry, an unexpected error has occurred."
-
 export const copyrightA = "Copyright"
 export const copyrightB = "2023 USeP PIA."
 export const copyrightIcon = "&copy;"
 export const rightsReserved = "All rights reserved."
 
-export const stampHeader = "OLA-UDPO VALIDATED"
-export const stampDateLabel = "Date Validated: "
-export const stampSampleDate = "July 24, 2023"
-
 export const assessmentDocumentTitle = "Privacy Impact Assessment Report"
-export const uagcName = "University Assessment and Guidance Center"
 export const preparedBy = "Prepared by:"
-export const sampleName = "Reyjet R. Sandoval"
-export const noImageFound = "No Image Found"

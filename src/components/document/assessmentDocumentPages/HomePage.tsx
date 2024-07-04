@@ -1,14 +1,12 @@
 import { Image, Page, Text, View } from "@react-pdf/renderer";
 import { urlUsepLogo } from "../../../values/images";
+import { preparedBy, schoolName, websiteHeader } from "../../../values/string";
 import {
-  preparedBy,
-  schoolName,
+  paperSizeA4,
   stampDateLabel,
   stampHeader,
   stampSampleDate,
-  websiteHeader,
-} from "../../../values/string";
-import { paperSizeA4 } from "../../../values/values";
+} from "../../../values/values";
 import IAssessmentReportDetails from "../interface/IAssessmentReportDetails";
 import documentStyle from "../styles/documentStyle";
 

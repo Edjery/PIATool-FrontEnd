@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import SideBarPopUp from "../components/SideBarPopUp";
 import { mainContentPrimaryColor } from "../values/colors";
+import { mainBodyHeight } from "../values/values";
 
 const DashboardLayout = () => {
   const [expanded, setExpanded] = useState(true);
@@ -32,8 +33,7 @@ const DashboardLayout = () => {
                 flexDirection: "column",
                 background: mainContentPrimaryColor,
                 padding: "2vh",
-                height: "83vh",
-                minHeight: "83vh",
+                height: mainBodyHeight,
                 alignItems: "center",
                 textAlign: "center",
                 overflow: "auto",

@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import { useRouteError } from "react-router-dom";
-import { errorHeader, errorSubHeader } from "../../values/string";
+import { errorHeader, errorSubHeader } from "../../values/values";
 
 interface RouteError {
   statusText?: string;
