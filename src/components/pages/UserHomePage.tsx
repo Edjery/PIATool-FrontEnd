@@ -30,7 +30,6 @@ const UserHomePage = () => {
         <Button variant="contained" onClick={handleButton}>
           {btnStart}
         </Button>
-        ;
       </Box>
     </Box>
   );

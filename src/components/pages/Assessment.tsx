@@ -91,13 +91,11 @@ const Assessment = () => {
 
   // actions
   const handleNext = () => {
-    if (activeStep === stepsLabel.length - 2) {
+    if (activeStep === stepsLabel.length - 1) {
       if (validateAssessmentData() || bypassAssessmentValidation) {
         handleAssessmentData();
-        setActiveStep(activeStep + 1);
+        navigate("/");
       }
-    } else if (activeStep === stepsLabel.length - 1) {
-      navigate("/");
     } else {
       setActiveStep(activeStep + 1);
     }

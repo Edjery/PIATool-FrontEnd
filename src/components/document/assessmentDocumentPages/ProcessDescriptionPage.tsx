@@ -76,8 +76,10 @@ const ProcessDescriptionPage = ({ DataProcess, ProcessName }: Props) => {
                 </View>
                 <View style={documentStyle.tableRow}>
                   {DataProcess != null &&
-                    DataProcess.dataField.map((field) => (
-                      <Text style={documentStyle.gridItem}>{field}</Text>
+                    DataProcess.dataField.map((field, index) => (
+                      <Text style={documentStyle.gridItem} key={index}>
+                        {field}
+                      </Text>
                     ))}
                 </View>
               </View>
