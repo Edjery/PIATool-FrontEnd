@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { processNameList } from "../../values/list";
+import { processNameList, questionSets } from "../../values/list";
 import {
   assessmentVersion,
   disclaimerTitle,
@@ -30,6 +30,7 @@ import FinalProcess from "../pageComponents/assessmentProcess/FinalProcess";
 import initialAssessment from "../pageComponents/assessmentProcess/initialValues/initialAssessment";
 import IAssessment from "../pageComponents/assessmentProcess/interface/IAssessment";
 import IDataProcess from "../pageComponents/assessmentProcess/interface/IDataProcess";
+import IDataProcessingEntry from "../pageComponents/assessmentProcess/interface/IDataProcessingEntry";
 import IRecommendedSolution from "../pageComponents/assessmentProcess/interface/IRecommendedSolution";
 import IRiskAssessment from "../pageComponents/assessmentProcess/interface/IRiskAssessment";
 import IStepsComponents from "../pageComponents/assessmentProcess/interface/IStepsComponents";
@@ -41,7 +42,6 @@ import dataProcessSchema from "../pageComponents/assessmentProcess/schema/dataPr
 import recommendedSolutionSchema from "../pageComponents/assessmentProcess/schema/recommendedSolution";
 import riskAssessmentSchema from "../pageComponents/assessmentProcess/schema/riskAssessmentSchema";
 
-const currentAssessmentVersion = assessmentVersion;
 const stepsLabel = [
   disclaimerTitle,
   processNameTitle,
@@ -71,21 +71,6 @@ const Assessment = () => {
   const [recommendedSolutions, setRecommendedSolutions] = useState(
     initialAssessment.recommendedSolutions
   );
-
-  useEffect(() => {
-    // backend update needed: get this data from current user, user department, validations from db if exist and current version
-    const data = true;
-    if (data) {
-      setReportDetails({
-        author: sampleName,
-        department: uagcDepartmentName,
-        validated: false,
-        dateValidated: stampSampleDate,
-        version: currentAssessmentVersion,
-      });
-    }
-  }, []);
-
   const [overallAssessment, setOverallAssessment] = useState<IAssessment>({
     reportDetails: reportDetails,
     processName: processName,
@@ -93,6 +78,36 @@ const Assessment = () => {
     riskAssessments: riskAssessments,
     dataFlow: dataFlow,
     recommendedSolutions: recommendedSolutions,
+  });
+
+  useEffect(() => {
+    // backend update needed: get this data from current user, user department, validations from db if exist and current version
+    const data = {
+      author: sampleName,
+      department: uagcDepartmentName,
+      validated: false,
+      dateValidated: stampSampleDate,
+      version: assessmentVersion,
+    };
+    if (data) setReportDetails(data);
+  }, []);
+
+  const currentQuestionSet = questionSets.find(
+    (questionSet) => questionSet.version === reportDetails.version
+  );
+
+  currentQuestionSet?.questionSections.forEach((section, sectionIndex) => {
+    const entries: IDataProcessingEntry[] = [];
+
+    section.questions.forEach((_question, questionIndex) => {
+      entries.push({
+        sectionId: sectionIndex,
+        questionId: questionIndex,
+        answer: "",
+      });
+    });
+
+    if (dataProcess) dataProcess.dataProcessing.push(entries);
   });
 
   // actions
@@ -129,7 +144,7 @@ const Assessment = () => {
   const validateAssessmentData = (): Boolean => {
     let valid = true;
     if (dataFlow == null) {
-      console.log(["Data Flow image is required"]);
+      console.log(["Data Flow image is required"]); // #Todo toastify
       valid = false;
     }
     dataProcessSchema.validate(dataProcess).catch((err) => {
@@ -182,7 +197,7 @@ const Assessment = () => {
         <ProcessName
           processName={processName}
           onChange={handleProcessName}
-          assessmentVersion={currentAssessmentVersion}
+          assessmentVersion={reportDetails.version}
           stepControls={{
             activeStep: activeStep,
             onBack: handleBack,
@@ -197,6 +212,7 @@ const Assessment = () => {
       component: (
         <DataProcess
           initialData={dataProcess}
+          questionSet={currentQuestionSet}
           onSubmit={handleDataProcess}
           stepControls={{
             activeStep: activeStep,

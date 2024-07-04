@@ -11,10 +11,6 @@ interface Props {
 }
 
 const RecommendationPage = ({ Recommendations }: Props) => {
-  Recommendations.sort(
-    (a, b) => parseInt(a.priorityNo) - parseInt(b.priorityNo)
-  );
-
   return (
     <CommonPage>
       <View style={[documentStyle.formTitle, documentStyle.centeredView]}>

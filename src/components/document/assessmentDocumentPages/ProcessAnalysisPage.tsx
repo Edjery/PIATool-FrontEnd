@@ -1,28 +1,24 @@
 import { Table, TD, TR } from "@ag-media/react-pdf-table";
 import { Text, View } from "@react-pdf/renderer";
-import { questionSets } from "../../../values/list";
+import IDataQuestionSet from "../../../values/interface/IDataQuestionSets";
 import { processLevelAnalysisTitle } from "../../../values/string";
 import IDataProcess from "../../pageComponents/assessmentProcess/interface/IDataProcess";
 import CommonPage from "../common/CommonPage";
 import documentStyle from "../styles/documentStyle";
 
 interface Props {
-  Version: string;
+  QuestionSet: IDataQuestionSet | undefined;
   DataProcess: IDataProcess | null;
 }
 
-const ProcessAnalysisPage = ({ DataProcess, Version }: Props) => {
-  const currentQuestionSet = questionSets.find(
-    (questionSet) => questionSet.version === Version
-  );
-
+const ProcessAnalysisPage = ({ DataProcess, QuestionSet }: Props) => {
   return (
     <CommonPage>
       <View style={[documentStyle.formTitle, documentStyle.centeredView]}>
         <Text>{processLevelAnalysisTitle}</Text>
       </View>
 
-      {currentQuestionSet?.questionSet.map((set, indexSet) => (
+      {QuestionSet?.questionSections.map((set, indexSet) => (
         <View key={indexSet}>
           <View style={documentStyle.formTitle}>
             <Text>{set.title}</Text>

@@ -1,4 +1,7 @@
 import { Document, PDFViewer } from "@react-pdf/renderer";
+import { useEffect, useState } from "react";
+import IDataQuestionSet from "../../values/interface/IDataQuestionSets";
+import { questionSets } from "../../values/list";
 import { assessmentDocumentTitle } from "../../values/string";
 import IAssessment from "../pageComponents/assessmentProcess/interface/IAssessment";
 import DataFlowPage from "./assessmentDocumentPages/DataFlowPage";
@@ -15,6 +18,10 @@ interface Props {
 }
 
 const AssessmentDocument = ({ AssessmentInputs }: Props) => {
+  const [currentQuestionSet, setCurrentQuestionSet] = useState<
+    IDataQuestionSet | undefined
+  >(questionSets[0]);
+
   const ReportDetails = AssessmentInputs.reportDetails;
   const ProcessName = AssessmentInputs.processName;
   const DataProcess = AssessmentInputs.dataProcess;
@@ -22,6 +29,23 @@ const AssessmentDocument = ({ AssessmentInputs }: Props) => {
   const DataFlow = AssessmentInputs.dataFlow;
   const Recommendations = AssessmentInputs.recommendedSolutions;
 
+  useEffect(() => {
+    const data = questionSets;
+    if (data) {
+      const currentQuestionSet = data.find(
+        (questionSet) => questionSet.version === ReportDetails.version
+      );
+      setCurrentQuestionSet(currentQuestionSet);
+    }
+  }, []);
+
+  const handleRecommendationSorting = () => {
+    Recommendations.sort(
+      (a, b) => parseInt(a.priorityNo) - parseInt(b.priorityNo)
+    );
+  };
+
+  handleRecommendationSorting();
   return (
     <PDFViewer style={documentStyle.viewer}>
       <Document title={assessmentDocumentTitle} style={{ fontFamily: "Arial" }}>
@@ -31,7 +55,7 @@ const AssessmentDocument = ({ AssessmentInputs }: Props) => {
           DataProcess={DataProcess}
         />
         <ProcessAnalysisPage
-          Version={ReportDetails.version}
+          QuestionSet={currentQuestionSet}
           DataProcess={DataProcess}
         />
         <RiskAssessmentPage RiskAssessments={RiskAssessments} />

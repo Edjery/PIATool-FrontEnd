@@ -6,7 +6,7 @@ import IRiskAssessment from "./IRiskAssessment";
 interface IAssessment {
     reportDetails: IReportDetails
     processName: string | "";
-    dataProcess: IDataProcess | null;
+    dataProcess: IDataProcess;
     riskAssessments: IRiskAssessment[];
     dataFlow: File | null;
     recommendedSolutions: IRecommendedSolution[];

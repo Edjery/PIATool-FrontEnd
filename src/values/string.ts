@@ -60,6 +60,8 @@ export const dataStorageDisposalQuestion1 = "What is the retention period?"
 export const dataStorageDisposalQuestion2 = "Where is the data stored/how is it stored?"
 export const dataStorageDisposalQuestion3 = "Is personal data being destroyed?"
 export const dataProcessNoteDescription = "Remember to check if all inputs are valid"
+export const emptyQuestionSet = "No question set available"
+
 
 export const riskAssessmentTitle = "Risk Assessment"
 export const riskAssessmentDescription = "In this form you will be using the risk level calculator you will simply input the Identified threat/vulnerability and choose what level of Impact and probability it has on the process."

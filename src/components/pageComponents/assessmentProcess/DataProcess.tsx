@@ -10,7 +10,7 @@ import { FieldArray, Form, Formik, getIn } from "formik";
 import { useState } from "react";
 import { hintLabelColor } from "../../../values/colors";
 import { IconDelete } from "../../../values/icons";
-import { dataProcessingQuestions } from "../../../values/list";
+import IDataQuestionSet from "../../../values/interface/IDataQuestionSets";
 import {
   btnAddField,
   btnValidate,
@@ -24,6 +24,7 @@ import {
   dataSubjectHint,
   dataSubjectLabel,
   dataSubjectName,
+  emptyQuestionSet,
   formFieldHint,
   formFieldLabel,
   formName,
@@ -46,18 +47,23 @@ import CardContainerTitle from "../../common/CardContainerTitle";
 import FormContainer from "../../common/FormContainer";
 import FormTextAreaField from "../../common/FormTextAreaField";
 import FormTextField from "../../common/FormTextField";
-import initialDataProcessValues from "./initialValues/initialDataProcessValues";
 import IDataProcess from "./interface/IDataProcess";
 import IStepControls from "./interface/IStepControls";
 import dataProcessSchema from "./schema/dataProcessSchema";
 
 interface Props {
-  initialData: IDataProcess | null;
+  initialData: IDataProcess;
+  questionSet: IDataQuestionSet | undefined;
   onSubmit: (values: IDataProcess) => void;
   stepControls: IStepControls;
 }
 
-const DataProcess = ({ initialData, onSubmit, stepControls }: Props) => {
+const DataProcess = ({
+  initialData,
+  questionSet,
+  onSubmit,
+  stepControls,
+}: Props) => {
   const [currentInitialData, setInitialData] = useState(initialData);
   const handleSubmit = (values: IDataProcess) => {
     onSubmit(values);
@@ -67,7 +73,7 @@ const DataProcess = ({ initialData, onSubmit, stepControls }: Props) => {
   return (
     <CardContainer variant="lg">
       <Formik
-        initialValues={currentInitialData || initialDataProcessValues}
+        initialValues={currentInitialData}
         validationSchema={dataProcessSchema}
         onSubmit={handleSubmit}
       >
@@ -198,37 +204,42 @@ const DataProcess = ({ initialData, onSubmit, stepControls }: Props) => {
               <CardContainerDescription
                 description={processLevelAnalysisDescription}
               />
-              {dataProcessingQuestions.map((section, sectionIndex) => (
-                <FormContainer
-                  variant="lg"
-                  title={section.title}
-                  key={section.title}
-                >
-                  {section.questions.map((question, questionIndex) => {
-                    const currentName = `dataProcessing[${sectionIndex}][${questionIndex}].answer`;
-                    const currentTouch = getIn(touched, currentName);
-                    const currentError = getIn(errors, currentName);
-                    const currentValues =
-                      values.dataProcessing[sectionIndex][questionIndex].answer;
+              {questionSet != null ? (
+                questionSet.questionSections.map((section, sectionIndex) => (
+                  <FormContainer
+                    variant="lg"
+                    title={section.title}
+                    key={section.title}
+                  >
+                    {section.questions.map((question, questionIndex) => {
+                      const currentName = `dataProcessing[${sectionIndex}][${questionIndex}].answer`; // warning: open for bugs when data is changed
+                      const currentTouch = getIn(touched, currentName);
+                      const currentError = getIn(errors, currentName);
+                      const currentValues =
+                        values.dataProcessing[sectionIndex][questionIndex]
+                          .answer;
 
-                    return (
-                      <FormTextAreaField
-                        hint={""}
-                        label={question}
-                        key={questionIndex}
-                        name={currentName}
-                        values={currentValues}
-                        helperText={
-                          currentTouch && currentError ? currentError : ""
-                        }
-                        error={Boolean(currentTouch && currentError)}
-                        handleChange={handleChange}
-                        handleBlur={handleBlur}
-                      />
-                    );
-                  })}
-                </FormContainer>
-              ))}
+                      return (
+                        <FormTextAreaField
+                          hint={""}
+                          label={question}
+                          key={questionIndex}
+                          name={currentName}
+                          values={currentValues}
+                          helperText={
+                            currentTouch && currentError ? currentError : ""
+                          }
+                          error={Boolean(currentTouch && currentError)}
+                          handleChange={handleChange}
+                          handleBlur={handleBlur}
+                        />
+                      );
+                    })}
+                  </FormContainer>
+                ))
+              ) : (
+                <Box>{emptyQuestionSet}</Box>
+              )}
               <Button
                 type="submit"
                 variant="contained"

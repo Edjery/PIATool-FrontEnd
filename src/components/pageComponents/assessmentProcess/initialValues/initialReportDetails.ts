@@ -5,7 +5,7 @@ const initialReportDetails: IReportDetails = {
     department: "",
     validated: false,
     dateValidated: null,
-    version: "",
+    version: "0.0.0",
 };
 
 export default initialReportDetails

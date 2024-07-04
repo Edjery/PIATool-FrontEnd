@@ -1,7 +1,9 @@
 import IDataProcessingQuestions from "./IDataProcessingQuestions";
 
 interface IDataQuestionSet {
+    name: string;
+    description: string;
     version: string;
-    questionSet: IDataProcessingQuestions[]
+    questionSections: IDataProcessingQuestions[]
 }
 export default IDataQuestionSet

@@ -93,8 +93,10 @@ export const dataProcessingQuestions: IDataProcessingQuestions[] = [
 ];
 
 export const questionSetA: IDataQuestionSet = {
+  name: "Default question set",
+  description: "This is the default question set from the NPC Privacy ToolKit",
   version: assessmentVersion,
-  questionSet: dataProcessingQuestions,
+  questionSections: dataProcessingQuestions,
 }
 
 export const questionSets: IDataQuestionSet[] = [questionSetA]
