@@ -4,7 +4,7 @@ const initialReportDetails: IReportDetails = {
     author: "",
     department: "",
     validated: false,
-    dateValidated: "",
+    dateValidated: null,
     version: "",
 };
 

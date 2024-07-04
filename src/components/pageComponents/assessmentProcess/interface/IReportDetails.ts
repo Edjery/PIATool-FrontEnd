@@ -2,7 +2,7 @@ interface IReportDetails {
     author: string;
     department: string;
     validated: boolean;
-    dateValidated: string;
+    dateValidated: string | null;
     version: string;
 }
 export default IReportDetails
