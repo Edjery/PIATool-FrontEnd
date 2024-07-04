@@ -81,14 +81,14 @@ const Assessment = () => {
         department: uagcDepartmentName,
         validated: false,
         dateValidated: stampSampleDate,
-        version: assessmentVersion,
+        version: currentAssessmentVersion,
       });
     }
   }, []);
+
   const [overallAssessment, setOverallAssessment] = useState<IAssessment>({
     reportDetails: reportDetails,
     processName: processName,
-    piaVersion: currentAssessmentVersion,
     dataProcess: dataProcess,
     riskAssessments: riskAssessments,
     dataFlow: dataFlow,
@@ -154,7 +154,6 @@ const Assessment = () => {
     setOverallAssessment({
       reportDetails: reportDetails,
       processName: processNameList[parseInt(processName)].name,
-      piaVersion: currentAssessmentVersion,
       dataProcess: dataProcess,
       riskAssessments: riskAssessments,
       dataFlow: dataFlow,

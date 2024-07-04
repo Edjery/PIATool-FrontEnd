@@ -5,14 +5,13 @@ import initialRecommendationSolutionValues from "./initialRecommendationSolution
 import initialReportDetails from "./initialReportDetails";
 import initialRiskAssessmentValues from "./initialRiskAssessmentValues";
 
-const initialAssessmentInputs: IAssessment = {
+const initialAssessment: IAssessment = {
     reportDetails: initialReportDetails,
     processName: processNameList[0].id.toString(),
-    piaVersion: "",
     dataProcess: initialDataProcessValues,
     riskAssessments: initialRiskAssessmentValues,
     dataFlow: null,
     recommendedSolutions: initialRecommendationSolutionValues,
 };
 
-export default initialAssessmentInputs
+export default initialAssessment

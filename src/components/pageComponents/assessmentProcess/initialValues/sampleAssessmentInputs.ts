@@ -13,7 +13,6 @@ const sampleAssessmentInputs: IAssessment = {
         version: assessmentVersion,
     },
     processName: processNameList[4].name.toString(),
-    piaVersion: assessmentVersion,
     dataProcess: {
         dataSubjects: "Students",
         formName: "Registration Form",
