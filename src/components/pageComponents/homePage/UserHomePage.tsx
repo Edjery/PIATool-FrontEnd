@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
-import { btnStart, schoolName, websiteHeader } from "../../values/string";
-import HeaderUsepLogo from "../pageComponents/homePage/HeaderUsepLogo";
 import { useNavigate } from "react-router-dom";
+import { btnStart, schoolName, websiteHeader } from "../../../values/string";
+import HeaderUsepLogo from "./HeaderUsepLogo";
 
 const UserHomePage = () => {
   const navigate = useNavigate();

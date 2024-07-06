@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Assessment from "../components/pages/Assessment";
-import UserHomePage from "../components/pages/UserHomePage";
 import ErrorPage from "../components/pages/ErrorPage";
-import DashboardLayout from "../layout/DashboardLayout";
+import HomePage from "../components/pages/HomePage";
 import ReportList from "../components/pages/ReportList";
+import DashboardLayout from "../layout/DashboardLayout";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <UserHomePage />,
+        element: <HomePage />,
       },
       {
         path: "/assessment",
