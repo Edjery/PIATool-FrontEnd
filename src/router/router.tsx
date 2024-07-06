@@ -14,22 +14,15 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+        index: true,
       },
       {
-        path: "/assessment",
+        path: "assessment",
         element: <Assessment />,
       },
       {
-        path: "/reports",
+        path: "reports",
         element: <ReportList />,
-      },
-      {
-        path: "/reported",
-        element: <ReportList />,
-      },
-      {
-        path: "/reporters",
-        element: <Assessment />,
       },
     ],
   },
