@@ -9,7 +9,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <DashboardLayout />,
-    errorElement: <ErrorPage />,
+    // errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -26,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/reported",
         element: <ReportList />,
+      },
+      {
+        path: "/reporters",
+        element: <Assessment />,
       },
     ],
   },
