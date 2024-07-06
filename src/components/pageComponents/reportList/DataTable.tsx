@@ -1,14 +1,7 @@
 import { Box } from "@mui/material";
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  assessmentStatusList,
-  departmentList,
-  processNameList,
-  questionSets,
-  reportListRowsKeys,
-  sampleReportListRows,
-} from "../../../values/list";
+import { assessmentStatusList, departmentList, processNameList, questionSets, reportListRowsKeys } from "../../../values/list";
 import { Order } from "../../../values/type";
 import ConfirmationDialog from "../../common/ConfirmationDialog";
 import { getComparator } from "../helper/getComparator";
@@ -34,7 +27,7 @@ const DataTable = () => {
   const [rowsPerPage, setRowsPerPage] = useState(defaultRowsPerPage);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(0);
-  const [anchorEls, setAnchorEls] = useState<(HTMLElement | null)[]>(Array(sampleReportListRows.length).fill(null));
+  const [anchorEls, setAnchorEls] = useState<(HTMLElement | null)[]>(Array(sampleReportList.length).fill(null));
 
   // Filter state
   const [selectedVersion, setSelectedVersion] = useState("");

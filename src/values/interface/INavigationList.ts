@@ -1,6 +1,8 @@
+import { CustomIconType } from "../type";
+
 interface INavigationList {
   name: string;
-  icon: () => JSX.Element;
+  icon: CustomIconType
   url: string;
 }
 export default INavigationList;

@@ -40,7 +40,7 @@ const Body = ({ tableFontSize, visibleRows, anchorEls, onActionButton, onOpen, o
             >
               {assessmentListActionButtons.map((button, buttonIndex) => (
                 <MenuItem key={buttonIndex} onClick={() => onActionButton(button.link, button.value, rowIndex, row.id)}>
-                  {button.icon}
+                  <button.icon />
                   <Typography pl={"1vh"} component={"span"} sx={{ fontSize: tableFontSize }}>
                     {button.label}
                   </Typography>

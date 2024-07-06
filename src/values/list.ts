@@ -1,16 +1,23 @@
+import { pendingColor, revisedColor, usepPrimaryColor, validatedColor, white } from "./colors";
 import {
+  IconCircleCheck,
+  IconCircleCross,
   IconDataScheme,
   IconDelete,
   IconDownload,
   IconEdit,
+  IconEditNote,
   IconFolder,
   IconHome,
+  IconListDocument,
   IconLogout,
   IconRecommendation,
   IconReport,
   IconSettings,
-  IconWarning,
+  IconWarning
 } from "./icons";
+import IActionButton from "./interface/IActionButton";
+import IAdminDashboardCartContent from "./interface/IAdminDashboardCartContent";
 import IDataProcessingQuestions from "./interface/IDataProcessingQuestions";
 import IDataQuestionSet from "./interface/IDataQuestionSets";
 import INavigationList from "./interface/INavigationList";
@@ -203,25 +210,25 @@ export const assessmentListActionButtons: IActionButton[] = [
   {
     label: "Download",
     value: "download",
-    icon: <IconDownload />,
+    icon: IconDownload,
     link: "/download/",
   },
   {
     label: "View",
     value: "view",
-    icon: <IconFolder />,
+    icon: IconFolder,
     link: "/view/",
   },
   {
     label: "Edit",
     value: "edit",
-    icon: <IconEdit />,
+    icon: IconEdit,
     link: "/edit/",
   },
   {
     label: "Delete",
     value: "delete",
-    icon: <IconDelete />,
+    icon: IconDelete,
     link: "/delete/",
   },
 ];
@@ -344,48 +351,215 @@ export const reportListHeaders: IReportListHeader[] = [
   },
 ];
 
-export const sampleReportListRows: IReportListRow[] = [
+export const sampleReportList: IReportListRow[] = [
   {
-    id: 0,
+    id: 1,
     version: assessmentVersion,
-    processName: processNameList[5].name,
-    departmentName: departmentList[25].name,
-    createdAt: "08/01/2024",
-    updatedAt: "August 08, 2023",
-    validationStatus: assessmentStatusList[0].name,
+    processName: processNameList[1].name,
+    departmentName: departmentList[3].name,
+    createdAt: "09/15/2023",
+    updatedAt: "10/20/2023",
+    validationStatus: assessmentStatusList[1].name,
   },
   {
     id: 2,
     version: assessmentVersion,
+    processName: processNameList[2].name,
+    departmentName: departmentList[5].name,
+    createdAt: "10/01/2023",
+    updatedAt: "11/02/2023",
+    validationStatus: assessmentStatusList[2].name,
+  },
+  {
+    id: 3,
+    version: assessmentVersion,
     processName: processNameList[3].name,
     departmentName: departmentList[8].name,
-    createdAt: "August 08, 2023",
-    updatedAt: "August 08, 2023",
+    createdAt: "11/10/2023",
+    updatedAt: "12/05/2023",
+    validationStatus: assessmentStatusList[0].name,
+  },
+  {
+    id: 4,
+    version: assessmentVersion,
+    processName: processNameList[4].name,
+    departmentName: departmentList[11].name,
+    createdAt: "12/15/2023",
+    updatedAt: "01/20/2024",
+    validationStatus: assessmentStatusList[3].name,
+  },
+  {
+    id: 5,
+    version: assessmentVersion,
+    processName: processNameList[5].name,
+    departmentName: departmentList[14].name,
+    createdAt: "01/01/2024",
+    updatedAt: "02/02/2024",
+    validationStatus: assessmentStatusList[4].name,
+  },
+  {
+    id: 6,
+    version: assessmentVersion,
+    processName: processNameList[4].name,
+    departmentName: departmentList[17].name,
+    createdAt: "02/10/2024",
+    updatedAt: "03/15/2024",
     validationStatus: assessmentStatusList[2].name,
   },
   {
     id: 7,
     version: assessmentVersion,
-    processName: processNameList[4].name,
-    departmentName: departmentList[14].name,
-    createdAt: "August 09, 2023",
-    updatedAt: "August 10, 2023",
-    validationStatus: assessmentStatusList[3].name,
+    processName: processNameList[3].name,
+    departmentName: departmentList[20].name,
+    createdAt: "03/01/2024",
+    updatedAt: "04/05/2024",
+    validationStatus: assessmentStatusList[1].name,
   },
   {
     id: 8,
     version: assessmentVersion,
     processName: processNameList[2].name,
-    departmentName: departmentList[7].name,
-    createdAt: "August 12, 2023",
-    updatedAt: "August 12, 2023",
+    departmentName: departmentList[23].name,
+    createdAt: "04/10/2024",
+    updatedAt: "05/20/2024",
+    validationStatus: assessmentStatusList[0].name,
+  },
+  {
+    id: 9,
+    version: assessmentVersion,
+    processName: processNameList[1].name,
+    departmentName: departmentList[26].name,
+    createdAt: "05/15/2024",
+    updatedAt: "06/30/2024",
+    validationStatus: assessmentStatusList[3].name,
+  },
+  {
+    id: 10,
+    version: assessmentVersion,
+    processName: processNameList[2].name,
+    departmentName: departmentList[21].name,
+    createdAt: "06/01/2024",
+    updatedAt: "07/02/2024",
+    validationStatus: assessmentStatusList[2].name,
+  },
+  {
+    id: 11,
+    version: assessmentVersion,
+    processName: processNameList[3].name,
+    departmentName: departmentList[2].name,
+    createdAt: "07/10/2024",
+    updatedAt: "08/15/2024",
     validationStatus: assessmentStatusList[1].name,
+  },
+  {
+    id: 12,
+    version: assessmentVersion,
+    processName: processNameList[5].name,
+    departmentName: departmentList[5].name,
+    createdAt: "08/01/2024",
+    updatedAt: "09/20/2024",
+    validationStatus: assessmentStatusList[4].name,
+  },
+  {
+    id: 13,
+    version: assessmentVersion,
+    processName: processNameList[3].name,
+    departmentName: departmentList[15].name,
+    createdAt: "09/10/2024",
+    updatedAt: "10/05/2024",
+    validationStatus: assessmentStatusList[0].name,
+  },
+  {
+    id: 14,
+    version: assessmentVersion,
+    processName: processNameList[1].name,
+    departmentName: departmentList[3].name,
+    createdAt: "10/15/2024",
+    updatedAt: "11/20/2024",
+    validationStatus: assessmentStatusList[2].name,
+  },
+  {
+    id: 15,
+    version: assessmentVersion,
+    processName: processNameList[1].name,
+    departmentName: departmentList[21].name,
+    createdAt: "11/01/2024",
+    updatedAt: "12/02/2024",
+    validationStatus: assessmentStatusList[3].name,
+  },
+  {
+    id: 16,
+    version: assessmentVersion,
+    processName: processNameList[2].name,
+    departmentName: departmentList[4].name,
+    createdAt: "12/10/2024",
+    updatedAt: "01/15/2025",
+    validationStatus: assessmentStatusList[1].name,
+  },
+  {
+    id: 17,
+    version: assessmentVersion,
+    processName: processNameList[4].name,
+    departmentName: departmentList[14].name,
+    createdAt: "01/01/2025",
+    updatedAt: "02/10/2025",
+    validationStatus: assessmentStatusList[0].name,
+  },
+  {
+    id: 18,
+    version: assessmentVersion,
+    processName: processNameList[4].name,
+    departmentName: departmentList[3].name,
+    createdAt: "02/15/2025",
+    updatedAt: "03/20/2025",
+    validationStatus: assessmentStatusList[4].name,
+  },
+  {
+    id: 19,
+    version: assessmentVersion,
+    processName: processNameList[3].name,
+    departmentName: departmentList[6].name,
+    createdAt: "03/01/2025",
+    updatedAt: "04/05/2025",
+    validationStatus: assessmentStatusList[2].name,
   },
 ];
 
 export const hideReportListRowsKeys = ["id"];
 
 export const reportListRowsKeys =
-  sampleReportListRows.length > 0
-    ? Object.keys(sampleReportListRows[0]).filter((key) => !hideReportListRowsKeys.includes(key))
+  sampleReportList.length > 0
+    ? Object.keys(sampleReportList[0]).filter((key) => !hideReportListRowsKeys.includes(key))
     : [];
+
+
+export const adminDashbordCardContent: IAdminDashboardCartContent[] = [
+  {
+    count: sampleReportList.length.toString(),
+    label: "Total Assessment",
+    icon: IconListDocument,
+    bgColor: usepPrimaryColor,
+    fontColor: white,
+  },
+  {
+    count: sampleReportList.filter(row => row.validationStatus === "VALIDATED").length.toString(),
+    label: "Validated Assessment",
+    icon: IconCircleCheck,
+    bgColor: validatedColor,
+    fontColor: white,
+  },
+  {
+    count: sampleReportList.filter(row => row.validationStatus === "PENDING").length.toString(),
+    label: "Pending Assessment",
+    icon: IconCircleCross,
+    bgColor: pendingColor,
+    fontColor: white,
+  },
+  {
+    count: sampleReportList.filter(row => row.validationStatus === "REVISED").length.toString(),
+    label: "Revised Assessment",
+    icon: IconEditNote,
+    bgColor: revisedColor,
+    fontColor: white,
+  },
+];

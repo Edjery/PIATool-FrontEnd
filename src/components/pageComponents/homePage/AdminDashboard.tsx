@@ -1,12 +1,19 @@
 import { Box } from "@mui/material";
+import { adminDashbordCardContent } from "../../../values/list";
+import AdminCardContainer from "./AdminCardContainer";
 
 const AdminDashboard = () => {
   return (
     <Box display={{ display: "flex", flexDirection: "row" }}>
-      <Box>Total Assessment</Box>
-      <Box>Validated Assessment</Box>
-      <Box>Pending Assessment</Box>
-      <Box>Revised Assessment</Box>
+      {adminDashbordCardContent.map((card, index) => (
+        <AdminCardContainer
+          key={index}
+          count={card.count}
+          label={card.label}
+          icon={card.icon}
+          sx={{ bgcolor: card.bgColor, color: card.fontColor }}
+        />
+      ))}
     </Box>
   );
 };

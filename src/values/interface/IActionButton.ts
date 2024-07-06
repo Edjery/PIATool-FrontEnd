@@ -1,6 +1,10 @@
+import { CustomIconType } from "../type";
+
 interface IActionButton {
     label: string;
     value: string;
-    icon: JSX.Element;
+    icon: CustomIconType
     link: string;
 }
+
+export default IActionButton

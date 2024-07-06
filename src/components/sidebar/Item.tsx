@@ -1,8 +1,9 @@
 import { Box, Link, Typography } from "@mui/material";
 import { sideBarPrimaryTextColor } from "../../values/colors";
+import { CustomIconType } from "../../values/type";
 
 interface Props {
-  icon: () => JSX.Element;
+  icon: CustomIconType;
   name: string;
   url: string;
 }
