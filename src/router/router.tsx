@@ -23,6 +23,10 @@ const router = createBrowserRouter([
         path: "/reports",
         element: <ReportList />,
       },
+      {
+        path: "/reported",
+        element: <ReportList />,
+      },
     ],
   },
 ]);
