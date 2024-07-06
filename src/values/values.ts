@@ -18,6 +18,7 @@ export const stampHeader = "OLA-UDPO VALIDATED"
 export const stampDateLabel = "Date Validated: "
 
 // process
+export const assessmentVersion = "1.0.0"
 export const bypassAssessmentValidation = false;
 
 // layout
@@ -27,11 +28,10 @@ export const headerHeight = `${headerHeightValue}vh`;
 export const footerHeight = `${footerHeightValue}vh`;
 export const mainBodyHeight = `${100 - (headerHeightValue + footerHeightValue)}vh`
 
-// default values
-export const uagcDepartmentName = "University Assessment and Guidance Center"
-export const sampleName = "Reyjet R. Sandoval"
-export const stampSampleDate = "July 24, 2023"
-
 // error messages
 export const errorHeader = "Oops!"
 export const errorSubHeader = "Sorry, an unexpected error has occurred."
+
+// default values
+export const sampleName = "Reyjet R. Sandoval"
+export const stampSampleDate = "July 24, 2023"

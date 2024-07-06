@@ -9,6 +9,12 @@ import SchemaOutlinedIcon from "@mui/icons-material/SchemaOutlined";
 import RecommendOutlinedIcon from "@mui/icons-material/RecommendOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import DeleteIcon from "@mui/icons-material/Delete";
+import DownloadIcon from "@mui/icons-material/Download";
+import FolderIcon from "@mui/icons-material/Folder";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import EditIcon from "@mui/icons-material/Edit";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import FilterListIcon from "@mui/icons-material/FilterList";
 
 export const IconHome = () => <HomeOutlinedIcon />;
 export const IconReport = () => <StickyNote2OutlinedIcon />;
@@ -18,6 +24,12 @@ export const IconDataScheme = () => <SchemaOutlinedIcon />;
 export const IconRecommendation = () => <RecommendOutlinedIcon />;
 export const IconSettings = () => <SettingsOutlinedIcon />;
 export const IconDelete = () => <DeleteIcon />;
+export const IconDownload = () => <DownloadIcon />;
+export const IconEye = () => <VisibilityIcon />;
+export const IconFolder = () => <FolderIcon />;
+export const IconEdit = () => <EditIcon />;
+export const IconHorizontalMore = () => <MoreVertIcon />;
+export const IconFilter = () => <FilterListIcon />;
 
 export const IconMenu = () => <MenuIcon />;
 export const UsepLogo = () => <CustomIcon img={usepLogo} />;

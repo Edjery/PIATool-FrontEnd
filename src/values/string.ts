@@ -18,7 +18,6 @@ export const processNameTitle = "Process Name"
 export const processNameLabel = `${processNameTitle}: `
 
 export const assessmentVersionLabel = "Assessment Version: "
-export const assessmentVersion = "1.0.0"
 
 export const processDescriptionTitle = "Process Description"
 export const processDescription = "Describe the process and its context. Define and specify its intended goals. Complete the form below to provide a detailed description of the process."
@@ -120,3 +119,5 @@ export const rightsReserved = "All rights reserved."
 
 export const assessmentDocumentTitle = "Privacy Impact Assessment Report"
 export const preparedBy = "Prepared by:"
+
+export const defaultFirstChoice = "All"

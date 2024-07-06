@@ -1,35 +1,25 @@
 import { Box, Typography } from "@mui/material";
 import { ReactNode } from "react";
-import {
-  mainHeaderPrimaryColor,
-  usepPrimaryColor,
-  usepTextPrimaryColor,
-} from "../../values/colors";
+import { mainHeaderPrimaryColor, usepPrimaryColor, usepTextPrimaryColor } from "../../values/colors";
+import getWidthBySizeVariant from "../../helper/getWidthBySizeVariant";
+import { SizeVariant } from "../../values/type";
 
 interface Props {
   children: ReactNode;
-  variant: "lg" | "md";
+  variant: SizeVariant;
   title: string;
 }
 
 const FormContainer = ({ children, variant, title }: Props) => {
-  let cardWidth = "60vh";
+  let cardWidth = getWidthBySizeVariant(variant);
 
-  switch (variant) {
-    case "lg":
-      cardWidth = "150vh";
-      break;
-    case "md":
-      cardWidth = "60vh";
-      break;
-  }
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
         margin: "2vh",
-        maxWidth: { cardWidth },
+        maxWidth: cardWidth,
         background: mainHeaderPrimaryColor,
         borderRadius: "2vh",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",

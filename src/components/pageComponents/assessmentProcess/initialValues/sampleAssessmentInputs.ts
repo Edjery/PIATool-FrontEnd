@@ -1,13 +1,12 @@
-import { processNameList } from "../../../../values/list";
-import { assessmentVersion } from "../../../../values/string";
-import { sampleName, uagcDepartmentName, stampSampleDate } from "../../../../values/values";
+import { departmentList, processNameList } from "../../../../values/list";
+import { assessmentVersion, sampleName, stampSampleDate } from "../../../../values/values";
 import IAssessment from "../interface/IAssessment";
 
 
 const sampleAssessmentInputs: IAssessment = {
     reportDetails: {
         author: sampleName,
-        department: uagcDepartmentName,
+        department: departmentList[21].name,
         validated: false,
         dateValidated: stampSampleDate,
         version: assessmentVersion,

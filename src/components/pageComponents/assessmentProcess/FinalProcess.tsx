@@ -11,7 +11,7 @@ interface Props {
 
 const FinalProcess = ({ assessmentInputs, stepControls }: Props) => {
   return (
-    <CardContainer variant="lg">
+    <CardContainer variant="100%">
       <AssessmentDocument AssessmentInputs={assessmentInputs} />
 
       <ButtonStepsNavigator

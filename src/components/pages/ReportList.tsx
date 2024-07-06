@@ -1,13 +1,15 @@
-import CardContainer from "../common/CardContainer";
-import Header from "../pageComponents/reportList/Header";
-import List from "../pageComponents/reportList/List";
+import { Box } from "@mui/material";
+import { mainBodyHeight } from "../../values/values";
+import FormContainer from "../common/FormContainer";
+import DataTable from "../pageComponents/reportList/DataTable";
 
 const ReportList = () => {
   return (
-    <CardContainer variant="lg">
-      <Header />
-      <List />
-    </CardContainer>
+    <Box sx={{ width: "100%", height: mainBodyHeight, overflow: "auto" }}>
+      <FormContainer variant={"100%"} title={"Privacy Impact Assessment List"}>
+        <DataTable />
+      </FormContainer>
+    </Box>
   );
 };
 

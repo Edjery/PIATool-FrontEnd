@@ -1,29 +1,23 @@
 import { Box } from "@mui/material";
 import { ReactNode } from "react";
+import getWidthBySizeVariant from "../../helper/getWidthBySizeVariant";
 import { mainHeaderPrimaryColor } from "../../values/colors";
+import { SizeVariant } from "../../values/type";
 
 interface Props {
   children: ReactNode;
-  variant: "lg" | "md";
+  variant: SizeVariant;
 }
 
 const CardContainer = ({ children, variant }: Props) => {
-  let cardWidth = "60vh";
+  const cardWidth = getWidthBySizeVariant(variant);
 
-  switch (variant) {
-    case "lg":
-      cardWidth = "150vh";
-      break;
-    case "md":
-      cardWidth = "60vh";
-      break;
-  }
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
-        maxWidth: cardWidth,
+        width: cardWidth,
         padding: "2vh",
         background: mainHeaderPrimaryColor,
         borderRadius: "2vh",

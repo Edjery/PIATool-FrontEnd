@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { processNameList, questionSets } from "../../values/list";
 import {
-  assessmentVersion,
   disclaimerTitle,
   finalStep,
   processDataFlowsTitle,
@@ -18,16 +17,12 @@ import {
   recommendedSolTitle,
   riskAssessmentTitle,
 } from "../../values/string";
-import {
-  bypassAssessmentValidation,
-  sampleName,
-  stampSampleDate,
-  uagcDepartmentName,
-} from "../../values/values";
+import { bypassAssessmentValidation } from "../../values/values";
 import DataProcess from "../pageComponents/assessmentProcess/DataProcess";
 import Disclaimer from "../pageComponents/assessmentProcess/Disclaimer";
 import FinalProcess from "../pageComponents/assessmentProcess/FinalProcess";
 import initialAssessment from "../pageComponents/assessmentProcess/initialValues/initialAssessment";
+import sampleAssessmentInputs from "../pageComponents/assessmentProcess/initialValues/sampleAssessmentInputs";
 import IAssessment from "../pageComponents/assessmentProcess/interface/IAssessment";
 import IDataProcess from "../pageComponents/assessmentProcess/interface/IDataProcess";
 import IDataProcessingEntry from "../pageComponents/assessmentProcess/interface/IDataProcessingEntry";
@@ -82,14 +77,8 @@ const Assessment = () => {
 
   useEffect(() => {
     // backend update needed: get this data from current user, user department, validations from db if exist and current version
-    const data = {
-      author: sampleName,
-      department: uagcDepartmentName,
-      validated: false,
-      dateValidated: stampSampleDate,
-      version: assessmentVersion,
-    };
-    if (data) setReportDetails(data);
+    const data = sampleAssessmentInputs;
+    if (data) setReportDetails(data.reportDetails);
   }, []);
 
   const currentQuestionSet = questionSets.find(
