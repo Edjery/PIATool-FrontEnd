@@ -10,7 +10,7 @@ const HomePage = () => {
   const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const data = "ADMIN";
+    const data = "USER";
     if (data) handleRoleRestriction(data);
     setLoading(false);
   }, []);
