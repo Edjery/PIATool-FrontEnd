@@ -109,7 +109,7 @@ const DataTable = () => {
       setSelectedItem(id);
       handleOpenDialog();
     } else {
-      navigate(`${endpoint}${rowIndex}`);
+      navigate(`${endpoint}${id}`);
     }
     handleCloseRowOptions(rowIndex);
   };
